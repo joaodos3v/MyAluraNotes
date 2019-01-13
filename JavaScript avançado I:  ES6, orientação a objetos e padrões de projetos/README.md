@@ -280,3 +280,11 @@ alert(nome);
 	}
 	```
 
+
+### Atividade 06 -  Blindando as negociações dentro da lista
+- **Curiosidade:** uma maneira de limpar um *array* (excluir todos seus elementos) é dizer que seu *length* é **=0**.
+	- **Ex.:** `array.length = 0`
+- **Programação defensiva usando *array***
+	- Ao invés de retornar a lista existente, permitindo assim que a lista seja incrementada ou tenha valores removidos fora da classe *NegociacoesController*, podemos retornar uma nova lista, alterando assim sua referência
+	- Isso impedirá que a lista original seja modificada, tendo em vista que a regra de negócio deste projeto é que uma negociação só possa ser adicionada, não podendo ser excluída ou editada
+	- Para isso, usaremos o [concat()](https://www.w3schools.com/jsref/jsref_concat_array.asp)
