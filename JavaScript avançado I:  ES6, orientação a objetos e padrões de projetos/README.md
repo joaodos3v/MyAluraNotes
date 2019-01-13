@@ -403,3 +403,22 @@ alert(nome);
 	}
 	```
 	
+
+
+
+
+
+## Aula 05 - Temos o modelo, mas e a view?
+
+### Atividade 01 - Classes que representam nossas Views
+- A propriedade **innerHTML** de um elemento do *DOM* converte uma string em novos elementos do *DOM*, caso a marcação esteja correta.
+	- **Ex.:** `elemento.innerHTML = '<div><h1>Novos elementos do DOM a partir do innerHTML</h1></div>'`
+	- **Ex2.:** 
+		```javascript
+		elemento.innerHTML = `
+			<div>
+				<h1>Novos elementos do DOM a partir do innerHTML</h1>
+			</div>
+		`;
+		```
+
