@@ -377,3 +377,13 @@ alert(nome);
 
 			};
 		```
+
+
+### Atividade 14 - Expressão regular ainda melhor
+- Melhorando a expressão regular:
+	- Durante o treinamento utilizamos a seguinte expressão regular para validar se uma data digitada pelo usuário é válida ou não:
+		`/\d{4}-\d{2}-\d{2}/`
+	- Contudo, ela **não** garante que a data será sempre correta, pois se o usuário digitar um ano com mais de 4 dígitos ou um dia com mais de dois dígitos ela considerará como correta. Para ficar ainda melhor, vamos alterar a expressão para:
+		`/^\d{4}-\d{2}-\d{2}$/`
+		- O `ˆ` indica "**começando com**"
+		- O `$` indica "**terminando com**"
