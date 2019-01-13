@@ -321,3 +321,17 @@ alert(nome);
 	validaCodigo('GWZ-JJ-12'); // válido
 	validaCodigo('1X1-JJ-12'); // inválido
 	```
+
+
+### Atividade 09 - O parâmetro não encaixa, e agora?
+- O método **[concat()](https://www.w3schools.com/jsref/jsref_concat_array.asp)** é muito interessante para juntar valores em *JavaScript*. Vejamos algums curiosidades:
+	- Para não precisar criar uma variável temporária, o método *concat()* pode ser chamado a partir da declaração de um *array vazio*
+		- **Ex.:** `[].concat(array1, array2)`
+	- A função concat aceita receber um número infinito de parâmetros, inclusive aqueles que não são um array.
+		- **Ex.:** 
+			```javascript
+				let listaDeNomes1 = ['Flávio', 'Rogers', 'Júlia'];
+				let listaDeNomes2 = ['Vieira', 'Fernanda', 'Gerson'];
+				exibeNoConsole([].concat(listaDeNomes1, listaDeNomes2, 'Rômulo'));
+			```
+	- O resultado de `concat` é um novo array com todos os elementos de quem realizou o `concat` e quem foi passado para a função.
