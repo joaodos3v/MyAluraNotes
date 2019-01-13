@@ -271,7 +271,6 @@ alert(nome);
 	```javascript
 	class Classe {
 		constructor() {
-
 		}
 
 		_metodoPrivado() {
@@ -288,3 +287,10 @@ alert(nome);
 	- Ao invés de retornar a lista existente, permitindo assim que a lista seja incrementada ou tenha valores removidos fora da classe *NegociacoesController*, podemos retornar uma nova lista, alterando assim sua referência
 	- Isso impedirá que a lista original seja modificada, tendo em vista que a regra de negócio deste projeto é que uma negociação só possa ser adicionada, não podendo ser excluída ou editada
 	- Para isso, usaremos o [concat()](https://www.w3schools.com/jsref/jsref_concat_array.asp)
+
+### Atividade 07 -  Resumindo
+- Ações que se repetem muitas vezes (tais como a formatação e conversão de datas) podem ser englobadas em uma classe "ajudante", que fique responsável por fazer esse trabalho repetitivo
+	- Nesse projeto, um exemplo é a classe *DataHelper.js*
+- Concatenações com o ES2015 se tornaram muito mais fáceis disponibilizando o uso de **Template Strings**
+	- Para criar uma *Template String*, deve ser iniciada a expressão com uma crase ( **\`** ) e utilizar o identificador ( **${}** )
+- Métodos "privados" podem ser sinalizado em *JavaScript*, assim como as propriedades, quando iniciam com *_ (underline)*
