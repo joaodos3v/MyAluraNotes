@@ -388,3 +388,18 @@ alert(nome);
 		- O `ˆ` indica "**começando com**"
 		- O `$` indica "**terminando com**"
 	- Para acessar um curso específico de expressão regular: (Curso)[https://www.alura.com.br/curso-online-expressoes-regulares]
+
+### Atividade 16 - Só tem métodos estáticos...
+- **Desafio:** Como podemos evitar que alguém instancie uma classe que só possui métodos estáticos, ou seja, uma classe que não faz sentido trabalharmos com uma instância?
+- **Solução:** Podemos lançar um erro dentro do `constructor`. Lembre-se que o `constructor` é chamando quando criamos uma instância de uma classe com o operador `new`.
+	```javascript
+	class ClasseQualquer {
+
+	    constructor() {
+	        throw new Error('Você não pode criar uma instância dessa classe');
+	    }
+
+	       // métodos estáticos da classe
+	}
+	```
+	
