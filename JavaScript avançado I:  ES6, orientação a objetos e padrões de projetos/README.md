@@ -335,3 +335,45 @@ alert(nome);
 				exibeNoConsole([].concat(listaDeNomes1, listaDeNomes2, 'Rômulo'));
 			```
 	- O resultado de `concat` é um novo array com todos os elementos de quem realizou o `concat` e quem foi passado para a função.
+
+### Atividade 13 - Por que...
+- Comparativo entre a criação de uma classe com métodos estáticos no **ES6** vs. **Antes do ES6**
+	- **ES6**:
+		```javascript
+			class Pessoa {
+
+			    constructor(nome, sobrenome) {
+			        this.nome = nome;
+			        this.sobreNome = sobrenome;
+			    }
+
+			    obterNomeCompleto() {
+			        return `${this.nome} ${this.sobrenome}`;
+			    }
+
+			    static metodoStaticoQualquer() {
+			        console.log('Método estático chamado');
+			    }
+
+			}
+		```
+	- **Antes do ES6**:
+		```javascript
+			function Pessoa(nome, sobrenome) {
+			    this.nome = nome;
+			    this.sobrenome = sobrenome;
+			}
+
+			// método de instância
+			Pessoa.prototype.obterNomeCompleto = function() {
+			    return this.nome + ' ' + this.sobrenome;
+			};
+
+			// declarando equivalente a método estático
+
+			Pessoa.metodoStaticoQualquer = function() {
+
+			    console.log('Método estático chamado');
+
+			};
+		```
