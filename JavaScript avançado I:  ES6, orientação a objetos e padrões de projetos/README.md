@@ -422,3 +422,17 @@ alert(nome);
 		`;
 		```
 
+### Atividade 04 - Totalizando o volume em nosso Template
+- Tendo em vista que em *Template Strings* não é possível executar mais do que uma instrução de código, tal como declarar uma variável e fazer um (forEach())[https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach] em seguida, um "dibre" (:laughing:) que podemos fazer é utilizar as conhecidas **(IIFE)[https://developer.mozilla.org/pt-BR/docs/Glossario/IIFE]** (*Immediately Invoked Function Expression*)
+	- **Ex.:** 
+		```javascript
+		${
+    		(function() {
+    			let total = 0;
+    			model.negociacoes.forEach(n => total += n.volume);
+    			return total;
+    		})()
+    	}
+		```
+		- Note que antes da `function` existe um abre parênteses e, ao final da função, existe um fecha parêntes.
+		- Logo em sequência, existe um parênteses vazio (responsável por **invocar** a função)
