@@ -436,3 +436,15 @@ alert(nome);
 		```
 		- Note que antes da `function` existe um abre parênteses e, ao final da função, existe um fecha parêntes.
 		- Logo em sequência, existe um parênteses vazio (responsável por **invocar** a função)
+
+
+### Atividade 05 - Totalizando o volume em nosso Template com a função reduce
+- Em resumo, a função (reduce())[https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce] processa um *array* e, no final, retorna **um único resultado**
+	- Um exemplo clássico da utilização desse método é quando se deseja totalizar os elementos de um *array*, por exemplo
+	- **Ex.:**
+		```javascript
+		model.negociacoes.reduce(function(total, n) {
+    		return total + n.volume;
+    	}, 0.0)
+		```
+		- Vale lembrar que o **segundo parâmetro** do `reduce` é o valor de inicialização do totalizador
