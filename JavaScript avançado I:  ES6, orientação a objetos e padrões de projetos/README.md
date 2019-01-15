@@ -453,3 +453,6 @@ alert(nome);
 - Implementamos o conceito de **view** dentro da aplicação
 - Usamos, além dos já conhecidos [map()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/map) e [join()](https://www.w3schools.com/jsref/jsref_join.asp), o [reduce()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) na criação da tabela
 - Entendemos que quando um **HTML válido** é inserido na propriedade *innerHTML* de um elemento, esse html é interpretado e convertido em elementos próprios do *DOM*
+
+### Atividade 07 - Reduce com arrow function
+- **Solução:** `numeros.reduce((total, num) => total * num , 1);`
