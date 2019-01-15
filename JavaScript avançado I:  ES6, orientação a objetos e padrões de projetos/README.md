@@ -456,3 +456,11 @@ alert(nome);
 
 ### Atividade 07 - Reduce com arrow function
 - **Solução:** `numeros.reduce((total, num) => total * num , 1);`
+
+### Atividade 12 - Map com arrow function
+- **Solução:** 
+	```javascript
+	let dobro = numeros.map(num => num * 2);
+	let metade = numeros.map(num => num/2);
+	let raiz = numeros.map(num => Math.sqrt(num));
+	```
