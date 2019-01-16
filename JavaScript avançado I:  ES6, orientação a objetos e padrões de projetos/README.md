@@ -536,3 +536,6 @@ alert(nome);
 
 				}
 				```
+
+
+> Curso finalizado! [:walking::boom::fire:](https://github.com/joao-vieira)
