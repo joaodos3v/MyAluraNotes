@@ -464,3 +464,23 @@ alert(nome);
 	let metade = numeros.map(num => num/2);
 	let raiz = numeros.map(num => Math.sqrt(num));
 	```
+
+
+
+## Aula 06 - Generalizando a solução da nossa View
+
+### Atividade 01 - Classe Mensagem
+- Parecido com o `php`, por exemplo, no ES2015, é possível definir um **valor padrão** para o construtor ou método de uma classe. 
+	- Isso evita que seja necessário mandar uma *string* em branco quando ainda não se sabe qual valor será usado no objeto, mas deseja-se criar uma instância daquela classe. Veja um exemplo abaixo:
+		```javascript
+		class Classe {
+
+			constructor(valor = '') {
+				this._valor = valor;
+			}
+		
+		}
+
+		let instanciaDaClasse = new Classe(); // Note que não estou passando nenhum valor em um construtor que, a princípio, obrigaria o envio de um parâmetro. Mesmo assim, o browser não irá apontar erro nenhum.
+		```
+	- Vale lembrar que se um valor for passado na instanciação do objeto da classe, obviamente a propriedade `_valor` do objeto conterá aquilo que foi enviado no parâmetro `valor`
