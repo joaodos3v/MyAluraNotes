@@ -492,3 +492,13 @@ alert(nome);
 	- **nulo**
 	- **undefined**
 		- Isso acontece porque em JavaScript, um **string sem conteúdo** é avaliada como **falso**
+
+### Atividade 03 - Herança e reutilização de código
+- Com o ES2015, o uso de **herança** tornou-se possível! Para utilizá-lo, como em qualquer outra linguagem, deve-ser utilizar a palavra reservada `extends` da declaração da classe, informado qual é a classe "pai" de qual ela herda.
+	- **Ex.:** 
+		```javascript
+		class ClasseFilha extends ClassePai  {
+			// conteúdo da classe aqui
+		}
+		```
+	- Vale lembrar que para invocar o `constructor` da classe pai, também como em outras linguagens de programação, basta utilizar o método `super`.
