@@ -475,7 +475,7 @@ alert(nome);
 		```javascript
 		class Classe {
 
-			constructor(valor = '') {
+			constructor(valor='') {
 				this._valor = valor;
 			}
 		
@@ -502,3 +502,15 @@ alert(nome);
 		}
 		```
 	- Vale lembrar que para invocar o `constructor` da classe pai, também como em outras linguagens de programação, basta utilizar o método `super`.
+
+### Atividade 04 - Construtor vs super
+- Como, até o momento, JavaScript **não suporta `implements` ou classes/métodos `abstract`**, existe uma "artimanha" para tentar sinalizar a um colega de equipe ou companheiro de projeto que uma classe que **herda** de outra classe (pai) deve implementar determinado método.
+	- Para isso, **na classe pai**, deve-se declarar o método desejado, por exemplo `_metodoObrigatorio() { }`
+		- Para auxiliar ainda mais no entendimento de um possível erro, coloque uma mensagem de aviso neste método, pois ele **não será implementado** na classe pai e, portanto, podemos deixar uma simples mensagem em seu corpo. Exemplo:
+		```javascript
+		_metodoObrigatorio() { 
+			throw new Error('Uma classe que herda desta deve, obrigatoriamente, implementar o método [_metodoObrigatorio] !');
+		}
+		```
+	- Feito isso, ao herdar essa classe pai e, caso ela faça uso do `__metodoObrigatorio()` e a classe filha que a herdou não tenha implementado esse método, **automaticamente** essa exceção será lançada!
+		- Vale lembrar que se a **classe filha** implementar o método `_metodoObrigatorio()` (exatamente com o *mesmo nome*), esse método será sobescrito e, quando um objeto dessa classe for instanciada, o método da **classe filha** é que será invocado!
