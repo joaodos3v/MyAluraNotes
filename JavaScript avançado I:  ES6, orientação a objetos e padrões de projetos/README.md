@@ -524,3 +524,15 @@ alert(nome);
 - Vimos também que se uma classe filha herda de outra classe que **exige** um parâmetro em seu construtor, esse parâmetro deve ser enviado na instanciação da classe **filha** e essa, por sua vez, deve enviar esse parâmetro ao construtor da classe **pai** utilizando o método `super()`.
 	- No entanto, isso **não é necessário** quando o construtor da classe **que herda** possui exatamente a mesma declaração (*número de parâmetros*) da classe que **foi herdada**. 
 		- **Por favor, veja uma explicação muito detalhada disso [nesse arquivo](https://github.com/joao-vieira/MyAluraNotes/blob/master/JavaScript%20avan%C3%A7ado%20I:%20%20ES6%2C%20orienta%C3%A7%C3%A3o%20a%20objetos%20e%20padr%C3%B5es%20de%20projetos/Detalhando-Heran%C3%A7a-Com-Exemplos.md)!**
+
+### Atividade 10 - Classes abstratas, tem como?
+- Classes que não devem possuir instâncias **não deveriam** poder ser instanciadas. 
+	- Essas classes (em *Orientação a Objetos*), que foram criadas para não possuírem instâncias, são chamadas de **classes abstratas**.
+	- No entanto, em JavaScript (*ECMAScript*) não há uma forma de evitar que alguém instancie uma classe (utilize um `new` nessa classe) :disappointed:
+		- Apenas por curiosidade, vale ressaltar que a linguagem *TypeScript* (que se baseia no JS) possui vários recursos que ainda não existem no JS, tais como as classes abstratas.
+			- Resumindo, com *TypeScript* poderíamos usar a palavra chave `abstract` que proíbe instanciar objetos dessa classe, por exemplo:
+				```javascript
+				abstract class Classe {
+
+				}
+				```
