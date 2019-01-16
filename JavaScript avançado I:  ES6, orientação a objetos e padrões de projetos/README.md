@@ -484,3 +484,11 @@ alert(nome);
 		let instanciaDaClasse = new Classe(); // Note que não estou passando nenhum valor em um construtor que, a princípio, obrigaria o envio de um parâmetro. Mesmo assim, o browser não irá apontar erro nenhum.
 		```
 	- Vale lembrar que se um valor for passado na instanciação do objeto da classe, obviamente a propriedade `_valor` do objeto conterá aquilo que foi enviado no parâmetro `valor`
+
+### Atividade 02 - Criando a classe MensagemView
+- Em um *if ternário* em JavaScript (ou em um *if* normal, obviamente), fazer algo do tipo `texto ? console.log('verdadeiro') : console.log('falso')` possibilita que o programador verifique se `texto` é diferente de:
+	- **espaço em branco**
+	- **zero**
+	- **nulo**
+	- **undefined**
+		- Isso acontece porque em JavaScript, um **string sem conteúdo** é avaliada como **falso**
