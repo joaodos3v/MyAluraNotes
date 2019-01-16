@@ -514,3 +514,11 @@ alert(nome);
 		```
 	- Feito isso, ao herdar essa classe pai e, caso ela faça uso do `__metodoObrigatorio()` e a classe filha que a herdou não tenha implementado esse método, **automaticamente** essa exceção será lançada!
 		- Vale lembrar que se a **classe filha** implementar o método `_metodoObrigatorio()` (exatamente com o *mesmo nome*), esse método será sobescrito e, quando um objeto dessa classe for instanciada, o método da **classe filha** é que será invocado!
+
+### Atividade 05 - Resumindo
+- Toda vez que um código for comum (se repetir) em várias classes, vale a pena repensar e, possivelmente, isolá-lo em uma nova classe, responsável por esse comportamente (caso da classe *View* desse projeto).
+	- Para implementar esse comportamente em outros objetos, vimos que podemos usar o conceito de **herança**.
+- Também vimmos um pequeno artifício que "obriga" o desenvolvedor a implementar métodos necessários para a classe pai, sempre que ele for extendida.
+	- Vimos que esse "artifício" consiste em lançar um erro para o programador que indique que ele deve **sobescrever** esse método na classe filha que herdou de uma classe pai.
+	- Um método desse tipo **não deve ser prefixado** com *_ (underline)*, pois ele será implementado por outras classes e isso estaria "quebrando a convenção" que diz que métodos que iniciam com *_ (underline)* são ***private***, ou seja, só devem ser invocados para própria classe onde estão declarados!
+- Vimos também que se uma classe filha herda de outra classe que **exige** um parâmetro em seu construtor, esse parâmetro deve ser enviado na instanciação da classe **filha** e essa, por sua vez, deve enviar esse parâmetro ao construtor da classe **pai** utilizando o método `super()`.
