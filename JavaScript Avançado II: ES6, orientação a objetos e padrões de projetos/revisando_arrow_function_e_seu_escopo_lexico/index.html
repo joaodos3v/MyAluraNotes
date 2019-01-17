@@ -13,7 +13,8 @@
     <script>
         console.log(this); // é window
 
-        let exibeConteudo = function() {
+        // arrow function agora!
+        let exibeConteudo = () =>  {
             console.log(this);
             alert(this.textContent);
         };
