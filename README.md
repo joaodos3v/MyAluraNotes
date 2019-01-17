@@ -15,14 +15,14 @@ Então, adicione a pasta ao repositório com a mensagem de commit:
 
 A cada atividade, deve-se seguir o padrão de mensagem de commit abaixo:  
 > ('Nome do curso') 'Aula': 'Atividade' [ 'Comentário']  
-> **Ex.:** (Java parte 1: Primeiros passos) O que é Java?: Introdução [ Vídeo de introdução do curso Java parte 1: Primeiros passos ]
+> **Ex.:** (Java parte 1: Primeiros passos) 01: 01 [ Atividade 01 do curso de Java ]    
 
 Para qualquer outro commit necessário, utilize:
 > Excp: Mensagem  
 > **Ex.:** Excp: atualizando permissão dos arquivos
 
 
-## Cursos:
+## Cursos: ![GitHub Logo](Imagens/javascript-es6-orientacao-a-objetos-parte-1.svg)
 
 > **LEGENDA:** :heavy_check_mark: = Finalizado | :arrow_forward: = Em Andamento
 
