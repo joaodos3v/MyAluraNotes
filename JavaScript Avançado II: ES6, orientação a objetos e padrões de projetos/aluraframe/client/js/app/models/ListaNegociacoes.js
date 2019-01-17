@@ -1,16 +1,14 @@
 class ListaNegociacoes {
 
-	constructor(contexto, armadilha) {
+	constructor(armadilha) {
 		this._negociacoes = [];
-		this._contexto    = contexto;
 		this._armadilha   = armadilha;
 	}
 
 
 	adiciona(negociacao) {
 		this._negociacoes.push(negociacao);
-		// this._armadilha(this); // Esse this é a própria instância que está sendo chamada no método controller
-		Reflect.apply(this._armadilha, this._contexto, [this]);
+		this._armadilha(this); // Esse this é a própria instância que está sendo chamada no método controller
 	}
 
 
@@ -21,8 +19,7 @@ class ListaNegociacoes {
 
 	esvazia() {
 		this._negociacoes = [];
-		// this._armadilha(this);
-		Reflect.apply(this._armadilha, this._contexto, [this]);
+		this._armadilha(this);
 	}
 
 }
