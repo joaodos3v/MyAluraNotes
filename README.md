@@ -26,4 +26,7 @@ Para qualquer outro commit necessário, utilize:
 
 > **LEGENDA:** :heavy_check_mark: = Finalizado | :arrow_forward: = Em Andamento
 
- :heavy_check_mark: [JavaScript avançado I: ES6, orientação a objetos e padrões de projetos](https://cursos.alura.com.br/course/javascript-es6-orientacao-a-objetos-parte-1)
+ :heavy_check_mark: [JavaScript avançado I: ES6, orientação a objetos e padrões de projetos](https://cursos.alura.com.br/course/javascript-es6-orientacao-a-objetos-parte-1)   
+
+
+ :arrow_forward: [JavaScript avançado II: ES6, orientação a objetos e padrões de projetos](https://cursos.alura.com.br/course/javascript-es6-orientacao-a-objetos-parte-2)
