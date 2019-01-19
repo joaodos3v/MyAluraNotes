@@ -72,3 +72,5 @@
 - Em um resumo para introduzir essa aula, o *ES6* possui um recurso que permite a criação de padrão de projeto.
 	- Basicamente, o que acontece é que o **proxy** vai englobar o objeto real e, ao invés dos métodos automáticos disparados quando um evento é executado (armadilhas) ficarem dentro da própria classe, prejudicando sua reutilização, eles ficarão no proxy.
 	- Com isso, eles podem ser executados entre a chamada do desenvolvedor para o *proxy* e do *proxy* para o *objeto*.
+
+### Atividade 03 - Aprendendo a trabalhar com o Proxy
