@@ -1,5 +1,7 @@
 # JavaScript Avançado II: ES6, orientação a objetos e padrões de projetos
 
+
+
 ## Aula 01 - Você lembrou de atualizar a view? Nem eu!
 
 ### Atividade 02 - E se atualizarmos a view quando o modelo for alterado?
@@ -58,3 +60,15 @@
 
 ### Atividade 15 - O padrão de projeto Observer
 - Utiliza-se o padrão de projeto **Observer** sempre que é necessário notificar partes do sistema interessadas quando um evento importante for disparado em outro local do sistema.
+
+
+
+
+
+
+## Aula 02 - Existe modelo mentiroso? O padrão de projeto Proxy!
+
+### Atividade 02 - O padrão de projeto Proxy
+- Em um resumo para introduzir essa aula, o *ES6* possui um recurso que permite a criação de padrão de projeto.
+	- Basicamente, o que acontece é que o **proxy** vai englobar o objeto real e, ao invés dos métodos automáticos disparados quando um evento é executado (armadilhas) ficarem dentro da própria classe, prejudicando sua reutilização, eles ficarão no proxy.
+	- Com isso, eles podem ser executados entre a chamada do desenvolvedor para o *proxy* e do *proxy* para o *objeto*.
