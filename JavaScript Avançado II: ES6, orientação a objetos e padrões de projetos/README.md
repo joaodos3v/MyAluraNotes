@@ -47,4 +47,10 @@
 	- O **segundo parâmetro** é o contexto que o método ou função adotará, ou seja, o valor que será assumido pelo `this`.
 	- Por fim, o último parâmetro é um *array* que contém todos os parâmetros que o método passado como primeiro parâmetro receberá.
 
-	
+### Atividade 13 - Reutilização de código com Composição e Mixin
+- Uma maneira de solucionar problemas onde dois objetos necessitam dos mesmos métodos, porém utilizar **herença** seria incorreto (ex: *avião* e *passarinho* podem `voar`, mas um passarinho não `ligaMotor`), é usar **composição**.
+	- Na **composição**, a classe que deseja usar o método de outra possui uma instância dessa classe.
+	- Por mais que a instância tenha vários métodos, só chamamos aqueles que nos interessa.
+- Outra opção é utilizar o **mixin**:
+	- Com **mixin** podemos "pegar emprestado" o método de outra classe sem termos que ter uma instância dessa classe, como é o caso de composição.	
+	- Um detalhe: foi necessário fazer `Aviao.prototype.voa` porque métodos criados usando *ES6* são adicionados no **prototype**. Qualquer método adicionado em **prototype** estará disponível para todas as instâncias.
