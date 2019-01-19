@@ -70,7 +70,17 @@
 
 ### Atividade 02 - O padrão de projeto Proxy
 - Em um resumo para introduzir essa aula, o *ES6* possui um recurso que permite a criação de padrão de projeto.
-	- Basicamente, o que acontece é que o **proxy** vai englobar o objeto real e, ao invés dos métodos automáticos disparados quando um evento é executado (armadilhas) ficarem dentro da própria classe, prejudicando sua reutilização, eles ficarão no proxy.
+	- Basicamente, o que acontece é que o **proxy** vai englobar o objeto real e, ao invés dos métodos automáticos disparados quando um evento é executado (armadilhas, vide: [Explicação 1, ](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Proxy) [Explicação 2 e ](https://ponyfoo.com/articles/es6-proxy-traps-in-depth) [Explicação 3](https://medium.com/@oieduardorabelo/javascript-entendendo-es6-proxies-6ed5f8f4d0b6)) ficarem dentro da própria classe, prejudicando sua reutilização, eles ficarão no proxy.
 	- Com isso, eles podem ser executados entre a chamada do desenvolvedor para o *proxy* e do *proxy* para o *objeto*.
 
 ### Atividade 03 - Aprendendo a trabalhar com o Proxy
+- No primeiro exemplo, estamos interceptando uma operação de **leitura** para colocar uma armadilha ([*trap*](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Proxy)), ou seja, toda vez que qualquer propriedade do objeto for lida, nossa armadilha será executada/disparada.
+	```javascript
+	get: function(target, prop, receiver) {
+		// funcionalidade da armadilha vai aqui
+	}
+	```
+	- Note que a função de interceptação receve **três parâmetros**:
+		- ***target*:** uma referência ao objeto original que está sendo encapsulado pelo `proxy`
+		- ***prop*:** a propriedade que está sendo acessada
+		- ***receiver*:** uma referência ao próprio `proxy`
