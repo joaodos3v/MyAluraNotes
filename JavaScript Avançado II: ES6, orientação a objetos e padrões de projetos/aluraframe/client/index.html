@@ -59,7 +59,7 @@
     </script>
 
     <script>
-        let negociacao = new Proxy(new Negociacao(new Date(), 1, 100), {
+        let lista = new Proxy(new ListaNegociacoes(), {
 
             set: function(target, prop, value, receiver) {
                 console.log(`Valor antigo: ${target[prop]} | Novo valor: ${value}`);
@@ -68,8 +68,7 @@
 
         });
 
-        negociacao._quantidade = 10;
-        negociacao._valor = 200;
+        lista.adiciona(new Negociacao(new Date(), 1, 100));
     </script>
 </body>
 </html>

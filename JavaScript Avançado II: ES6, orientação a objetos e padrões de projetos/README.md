@@ -85,3 +85,6 @@
 		- ***prop*:** a propriedade que está sendo acessada
 		- ***receiver*:** uma referência ao próprio `proxy`
 
+### Atividade 05 - Construindo armadilhas de escrita
+- As armadilhas de escritam possuem a mesma lógica/metodologia que as armadilhas de leitura, com a exceção de que a palavra reservada para dispará-las é `set` e que elas devem receber um parâmetro a mais, que é o `value`
+	- Vale lembrar que essa *trap* é chamada toda vez que uma propriedade do objeto tem um valor definido (ou redefinido)
