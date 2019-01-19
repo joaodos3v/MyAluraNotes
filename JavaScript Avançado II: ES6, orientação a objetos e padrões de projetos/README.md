@@ -39,3 +39,12 @@
 
 	var relogio = new Relogio();
 	```
+
+
+### Atividade 12 - Revisando Reflect.apply
+- Como `Reflect.apply` funciona?
+	- O **primeiro parâmetro** é o método ou função que desejamos invocar.
+	- O **segundo parâmetro** é o contexto que o método ou função adotará, ou seja, o valor que será assumido pelo `this`.
+	- Por fim, o último parâmetro é um *array* que contém todos os parâmetros que o método passado como primeiro parâmetro receberá.
+
+	
