@@ -49,8 +49,12 @@
 
 ### Atividade 13 - Reutilização de código com Composição e Mixin
 - Uma maneira de solucionar problemas onde dois objetos necessitam dos mesmos métodos, porém utilizar **herença** seria incorreto (ex: *avião* e *passarinho* podem `voar`, mas um passarinho não `ligaMotor`), é usar **composição**.
+### Atividade 13 - Reutilização de código com Composição e Mixin
 	- Na **composição**, a classe que deseja usar o método de outra possui uma instância dessa classe.
 	- Por mais que a instância tenha vários métodos, só chamamos aqueles que nos interessa.
 - Outra opção é utilizar o **mixin**:
 	- Com **mixin** podemos "pegar emprestado" o método de outra classe sem termos que ter uma instância dessa classe, como é o caso de composição.	
 	- Um detalhe: foi necessário fazer `Aviao.prototype.voa` porque métodos criados usando *ES6* são adicionados no **prototype**. Qualquer método adicionado em **prototype** estará disponível para todas as instâncias.
+
+### Atividade 15 - O padrão de projeto Observer
+- Utiliza-se o padrão de projeto **Observer** sempre que é necessário notificar partes do sistema interessadas quando um evento importante for disparado em outro local do sistema.
