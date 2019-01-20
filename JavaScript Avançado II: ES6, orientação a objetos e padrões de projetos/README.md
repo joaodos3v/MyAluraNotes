@@ -88,3 +88,50 @@
 ### Atividade 05 - Construindo armadilhas de escrita
 - As armadilhas de escritam possuem a mesma lógica/metodologia que as armadilhas de leitura, com a exceção de que a palavra reservada para dispará-las é `set` e que elas devem receber um parâmetro a mais, que é o `value`
 	- Vale lembrar que essa *trap* é chamada toda vez que uma propriedade do objeto tem um valor definido (ou redefinido)
+
+### Atividade 08 - Construindo armadilhas para métodos
+- Bom, tudo certo, tudo funcionando, mas agora queremos interceptar a chamada para um método de um objeto. Porém, temos um problema: no *ES6*, **não existe uma função nativa que intercepte a chamada de métodos** (apenas leituras e atribuções - aka *getters* e *setters*).
+	- Com isso, temos duas possibilidades de soluções: ou forçamos que os métodos que desejamos interceptar, de alguma forma, façam uma nova atribuição em uma propriedade do objeto (possível gargalo de desempenho) ou implementamos uma solução customizada e um tanto quanto complexa, mas otimizada e funcional.
+		- Obviamente que não queremos que nosso sistema fique lento e, por isso, o mais indicado é a **segunda opção**.
+		- Essa solução parte de um **princípio nativo do *JavaScript*:** `todo método/função em JavaScript, internamente, sempre realiza um getter e depois um apply`
+			- Opa, mas então temos um caminho a seguir, pois um **getter** a gente já sabe como interceptar!
+		- É isso mesmo e, portanto, nossa solução começa utilizando a palavra reservada `get`
+		- Porém, precisamos saber se o evento que invocou essa chamada `get` realmente é um método (pois vale lembrar que qualquer leitura em uma propriedade do objeto que possui esse `proxy` irá cair nesse **mesmo trecho de código**)
+			- Pensando nisso, podemos definir um *array* com os nomes dos métodos que desejamos interceptar (literal mesmo, ou seja, se o método se chama `teste123`, o valor desse *array* será *teste123*)
+			- Aliado a isso, podemos usar o [includes()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/contains), que determina se um *array* contém ou não determinado elemento
+			- E, para garantir que não teremos problemas ao confundir essa chave com o nome de uma propriedade do objeto (se, por exemplo, esse objeto tivesse uma propriedade chamada `teste123`), devemos verificar se o evento que disparou esse **handler** foi um método
+				- Para isso, faremos uso do operador [typeof](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/typeof), que retorna uma *string* indicando o tipo de um operando
+				- Nossa condição é que somente o tipo de operando **function** seja filtrado.
+			- Por fim, essa **condicional** ficaria semelhante ao código que segue:
+				```javascript
+				if(['teste123', 'metodo2', 'metodo3'].includes(prop)  &&  typeof(target[prop]) == typeof(Function) ) {
+					// o evento que disparou é o handler é um método e, além disso, é um dos métodos esperados no array (ou teste123, ou metodo2, ou metodo3)
+				}
+				```
+			- Agora que confirmamos que realmente foi um método que invocou esse *handler*, podemos escrever o código que consideramos necessário ser executado. 
+				- No entanto, para que possamos executar nossa solução, dentro dessa condicional precisamos retornar uma **nova função**.
+					- Aqui entra um detalhe bem importante: **essa função retornada deve ser uma `function` para que o `this` seja dinâmico!** Lembrando que uma *arrow function* tem o contexto **léxico** e, por isso, nesse caso, não seria de grande ajuda.
+				- Dentro dessa `function`, podemos colocar o código que quisermos que seja executado quando esse **handler** for ativado. Depois que nosso código customizado for executado, devemos lembrar de adicionar a linha `return Reflect.apply(target[prop], target, arguments)` para que esse método invocado siga seu **fluxo normal de execução**.
+					- O parâmetro ***arguments* é um *array* implícito do JavaScript que permite que todos os parâmetros passados para a função sejam acessados.**
+		- Para completar, lembrando que qualquer leitura em uma propriedade do objeto também vai cair no mesmo trecho de código, precisamos possuir um `return` global que permita que uma leitura **finalize** seu fluxo de execução.
+			- Para que isso seja possível, como em um `get` simples, a linha `return Reflect.get(target, prop, receiver)` deve ser adicionada no fim do método.
+		- O código final fica parecido com:
+			```javascript
+			<script>
+			let lista = new Proxy(new ListaNegociacoes(), {
+				get(target, prop, receiver) {
+					if(['adiciona', 'esvazia'].includes(prop) && typeof(target[prop]) == typeof(Function)) {
+
+					    return function() {
+
+					      console.log(`a propriedade "${prop}" foi interceptada`);
+					      Reflect.apply(target[prop], target, arguments);
+					    }
+
+					}
+					
+					return Reflect.get(target, prop, receiver);
+				}
+			});
+			</script>
+			```
