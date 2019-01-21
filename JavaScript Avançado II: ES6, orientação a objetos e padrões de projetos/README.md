@@ -153,3 +153,21 @@
 
 	console.log(funcionarioProxy.email);
 	```
+
+
+### Atividade 14 - Proxy modificando retorno de método
+- **Problema:** Temos mais uma vez o seguinte objeto literal: `let funcionario = {email: 'abc@abc.com'};` . Desta vez, imprima a mensagem `"Armadilha aqui!"`, além disso, modifique o retorno do *getter*, fazendo-o retornar o `email`, começando e terminando com dois asteriscos.
+- **Solução:**
+	```javascript
+	let funcionario = {email: 'abc@abc.com'};
+
+	// Solução
+	let funcionarioProxy = new Proxy(funcionario, {
+		get(target, prop, receiver) {
+			console.log('Armadilha aqui!');
+			return `**${Reflect.get(target, prop, receiver)}**`;
+		}
+	});
+
+	console.log(funcionarioProxy.email);
+	```
