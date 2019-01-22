@@ -225,3 +225,55 @@
 
 ### Atividade 17 - Um esclarecimento extra é sempre bom!
 - **Curiosidade:** armadilhas serão disparadas mesmo se tentarmos modificar uma propriedade congelada de um objeto, ainda que ele não seja modificado.
+
+### Atividade 18 - Proxy e peculiaridade com setters
+- **Problema:** Crie um proxy que exiba no console o valor da propriedade antes de ela ser alterada e o valor novo. Inclusive, exiba também o nome da propriedade que está sendo modificada.
+- **Solução:**
+	```javascript
+	class Funcionario {
+
+	    constructor(email) {
+	        this._email = email;
+	    }
+
+	    get email() {
+	        return this._email;
+	    }
+
+	    set email(email) {
+	        this._email = email;
+	    }
+	}
+
+	// Solução
+	let funcionarioProxy = new Proxy(new Funcionario('abc@abc.com'), {
+		set(target, prop, value, receiver) {
+			console.log(`Valor da prop antes de alterar: ${target[prop]}  |  Novo valor: ${value}`);
+			console.log(`Propriedade: ${prop}`); // imprimindo a propriedade que está sendo alterada
+			return Reflect.set(target, prop, value, receiver);
+		}
+	});
+
+	funcionarioProxy.email = 'novo@abc.com';
+	```
+
+
+### Atividade 19 - Arguments
+- O exemplo mais comum que conhecemos para passar parâmetros para funcões e métodos em JavaScript é parecido com o exemplo abaixo:
+	```javascript
+	function exibeNomeCompleto(nome, sobrenome) {
+	  alert(`${nome} ${sobrenome}`);
+	}
+
+	exibeNomeCompleto('João', 'Vieira');
+	```
+	- Contudo, podemos conseguir o mesmo resultado sem passar parâmetros para a função:
+	```javascript
+	function exibeNomeCompleto() {
+	  alert(`${arguments[0]} ${arguments[1]}`);
+	}
+
+	exibeNomeCompleto('João', 'Vieira');
+	```
+	- Por mais que nossa função não receba parâmetros, podemos ter acesso aos parâmetros passados com **`arguments`**.
+		- É uma variável implícita que nos dá acesso a todos os parâmetros passados para a função ou método. É claro que a primeira forma, nomear os parâmetros da função, é menos verbosa e mais legível. Mas há muitos hacks em JavaScript que podem fazer uso de **`arguments`**.
