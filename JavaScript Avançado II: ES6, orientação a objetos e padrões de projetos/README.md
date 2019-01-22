@@ -287,3 +287,8 @@
 
 ### Atividade 01 - Padrão de Projeto Factory
 - *Factory*, de maneira grotesca, consiste em uma classe especializada que é construída para criar determinado tipo de objeto.
+
+### Atividade 03 - Isolando a complexidade de associar o modelo com a view na classe Bind
+- ***Data Binding*** => Data (dado) / Binding (associação)
+- Associação entre o modelo (*model*) e a visão (*view*) - ou seja, toda vez que o modelo mudar, dispara-se uma atualização da *view* - é chamada de **data binding unidirecional**.
+- **Curiosidade:** uma das grandes "sacadas" do JavaScript é que um `constructor` pode devolver qualquer "coisa", não só uma instância da própria classe.
