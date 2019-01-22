@@ -308,3 +308,16 @@
 			'Veronese', 'Vieira'
 		);
 		```
+
+
+### Atividade 08 - Fábricas na API JavaScript
+- O padrão de projeto *Factory* é tão vantajoso que é utilizado em várias classes da própria *API JavaScript*, como nas classes **String** e **Array**. Veja:
+	- Por exemplo, a classe `String` possui um método (ou *factory method*) para transformar vários `CharCode` em uma string:       
+		`let abc = String.fromCharCode(65, 66, 67);  // "ABC"`
+	- Outro exemplo é a classe `Array`, que pode receber uma string ou um iterável, como lista ou mapas, para criar um array::       
+		```javascript
+		let d = Array.from("abc");
+		["a", "b", "c"]
+		```
+	- Ou seja, um *factory method* nem sempre precisa estar dentro de uma classe dedicada. No exemplo desse exercício, não existe uma classe `StringFactory` ou `ArrayFactory`. O método pode fazer parte da classe em questão.
+		- Além disso, o *factory method* não precisa se chamar *create* ou *constroi*. Outros nomes são válidos, como *from* ou *getInstance*.
