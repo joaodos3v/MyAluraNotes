@@ -292,3 +292,19 @@
 - ***Data Binding*** => Data (dado) / Binding (associação)
 - Associação entre o modelo (*model*) e a visão (*view*) - ou seja, toda vez que o modelo mudar, dispara-se uma atualização da *view* - é chamada de **data binding unidirecional**.
 - **Curiosidade:** uma das grandes "sacadas" do JavaScript é que um `constructor` pode devolver qualquer "coisa", não só uma instância da própria classe.
+
+### Atividade 04 - Parâmetros REST
+- Outra nova *feature* do ES2015+ é o [*REST Operator*](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/rest_parameters), que permite que **n parâmetros** sejam enviados para um método sem a necessidade de, **explicitamente**, o desenvolvedor enviar um *array* neste parâmetro.
+	- Obviamente que essa *feature* exige que esse `parâmetro dinâmico` seja enviado por último (em um método com mais de um argumento). Isso porque, caso ele seja enviado por primeiro, o método vai "entender" que todos os demais parâmetros fazem parte de *um único array*.
+	- **Ex.:**
+		```javascript
+		exemplo(parametro1, parametro2, ...nParametros) {
+			// nParametros é um array contendo Veronese e Vieira => ['Veronese', 'Vieira']
+		}
+
+		exemplo( 
+			'João',
+			'Vitor',
+			'Veronese', 'Vieira'
+		);
+		```
