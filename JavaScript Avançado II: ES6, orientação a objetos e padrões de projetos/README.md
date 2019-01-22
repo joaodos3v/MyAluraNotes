@@ -277,3 +277,13 @@
 	```
 	- Por mais que nossa função não receba parâmetros, podemos ter acesso aos parâmetros passados com **`arguments`**.
 		- É uma variável implícita que nos dá acesso a todos os parâmetros passados para a função ou método. É claro que a primeira forma, nomear os parâmetros da função, é menos verbosa e mais legível. Mas há muitos hacks em JavaScript que podem fazer uso de **`arguments`**.
+
+
+
+
+
+
+## Aula 03 - E se alguém criasse nossos proxies? O Padrão de Projeto Factory
+
+### Atividade 01 - Padrão de Projeto Factory
+- *Factory*, de maneira grotesca, consiste em uma classe especializada que é construída para criar determinado tipo de objeto.
