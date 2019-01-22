@@ -202,3 +202,22 @@
 
 	console.log(funcionario.email);
 	```
+
+
+### Atividade 16 - Mais um proxy, agora para lidar escrita!
+- **Problema:** `let funcionario = {email: 'abc@abc.com'};`   
+	Crie um proxy que exibe no console o valor da propriedade antes dela ser alterada e o valor novo.
+- **Solução:**
+	```javascript
+	let funcionario = {email: 'abc@abc.com'};
+
+	// Solução
+	let funcionarioProxy = new Proxy(funcionario, {
+		set(target, prop, value, receiver) {
+			console.log(`Valor antigo: ${target[prop]} |  Valor novo: ${value} `);
+			return Reflect.set(target, prop, value, receiver);
+		}
+	});
+
+	funcionarioProxy.email = 'novo@abc.com';
+	```
