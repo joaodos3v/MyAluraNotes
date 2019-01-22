@@ -171,3 +171,34 @@
 
 	console.log(funcionarioProxy.email);
 	```
+
+
+### Atividade 15 - Proxy e peculiaridade com getters
+- **Solução:**
+	```javascript
+	class Funcionario {
+
+	    constructor(email) {
+	        this._email = email;
+	    }
+
+	    get email() {
+	        return this._email;
+	    }
+
+	    set email(email) {
+	        this._email = email;
+	    }
+	}
+
+	// Solução
+	let funcionario = new Proxy(new Funcionario('abc@abc.com'), {
+		get(target, prop, receiver) {
+			console.log("Armadilha aqui!");
+			console.log(prop); // Para deixar mais claro o porquê do console.log aparecer 2x
+			return Reflect.get(target, prop, receiver);
+		}
+	});
+
+	console.log(funcionario.email);
+	```
