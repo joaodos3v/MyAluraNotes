@@ -321,3 +321,7 @@
 		```
 	- Ou seja, um *factory method* nem sempre precisa estar dentro de uma classe dedicada. No exemplo desse exercício, não existe uma classe `StringFactory` ou `ArrayFactory`. O método pode fazer parte da classe em questão.
 		- Além disso, o *factory method* não precisa se chamar *create* ou *constroi*. Outros nomes são válidos, como *from* ou *getInstance*.
+
+### Atividade 09 - DateHelper é um Factory?
+- Vale lembrar que deve-se tomar muito cuidado para saber **quando usar uma `Factory`**.
+	- Isso porque o padrão de projeto `Factory` ocorre quando temos uma classe que nos ajuda a criar um objeto complexo, ou seja, ela esconde de nós os detalhes de criação desse objeto. É por isso que uma classe `Factory` possui apenas um método, faz sentido, pois se tivéssemos que chamar mais de um para criar um objeto, a responsabilidade de sua criação voltaria a ficar à cargo do desenvolvedor.
