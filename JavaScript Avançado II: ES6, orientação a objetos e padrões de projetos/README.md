@@ -221,3 +221,7 @@
 
 	funcionarioProxy.email = 'novo@abc.com';
 	```
+
+
+### Atividade 17 - Um esclarecimento extra é sempre bom!
+- **Curiosidade:** armadilhas serão disparadas mesmo se tentarmos modificar uma propriedade congelada de um objeto, ainda que ele não seja modificado.
