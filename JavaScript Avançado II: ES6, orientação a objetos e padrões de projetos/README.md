@@ -358,3 +358,6 @@
 - Para capturar a resposta de uma requisição assíncrona feita com o auxílio do XMLHttpRequest](https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHTTPRequest), podemos usar a propriedade **responseText**.
 	- Essa propriedade é útil para *debug* também, pois se algum erro ocorreu do lado do servidor, a descrição do erro está contida nessa propriedade.
 	- Como esse atributo é uma *string*, ou seja, é texto puro, devemos utilizar o [JSON.parse()](https://www.w3schools.com/js/js_json_parse.asp) para que possamos converter esse texto em [*JSON*](https://www.json.org/) e, dessa forma, fique mais fácil de manipular as informações capturadas.
+
+### Atividade 04 - Separando as responsabilidades
+- Existe uma *convenção* quando se trabalha com **programação assíncrona** conhecida como `Error First` [entenda](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/), que significa que em um método asśincrono, seu primeiro parâmetro deve ser reservado para um **objeto de erro**. Já o **resultado da operação** invocada pelo método deve vir como segundo parâmetro.
