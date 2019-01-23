@@ -353,3 +353,8 @@
 			- Esses estados podem ser capturados utilizando o método [*onreadystatechange*](https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHttpRequest/onreadystatechange), que é disparado **toda vez que o estado da requisição for alterado**.
 				- Para saber o estado que a requisição se encontra atualmente, podemos utilizar o atributo ***readyState***.
 				- Porém, **sempre deve-se confirmar** se recebemos uma resposta de sucesso com o atributo ***status == 200***, tendo em vista que muitos servidores podem retornar uma mensagem válida, porém informando que um erro ocorreu. Contudo, esse caso, o *status* será alterado e seria filtrado pela condicional que confirma se *status == 200*.
+
+### Atividade 03 - Realizando o parse da resposta
+- Para capturar a resposta de uma requisição assíncrona feita com o auxílio do XMLHttpRequest](https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHTTPRequest), podemos usar a propriedade **responseText**.
+	- Essa propriedade é útil para *debug* também, pois se algum erro ocorreu do lado do servidor, a descrição do erro está contida nessa propriedade.
+	- Como esse atributo é uma *string*, ou seja, é texto puro, devemos utilizar o [JSON.parse()](https://www.w3schools.com/js/js_json_parse.asp) para que possamos converter esse texto em [*JSON*](https://www.json.org/) e, dessa forma, fique mais fácil de manipular as informações capturadas.

@@ -48,8 +48,15 @@ class NegociacaoController {
 			if(xhr.readyState == 4) {
 				if(xhr.status == 200) {
 					console.log('Obtendo as negociações do servidor...');
+
+					JSON.parse(xhr.responseText) // transforma a resposta de texto puro para JSON
+						.map(objeto => new Negociacao(new Date(objeto.data), objeto.quantidade, objeto.valor)) // para cada um dos objetos dentro da lista é criada uma instância da classe Negociacao
+						.forEach(negociacao => this._listaNegociacoes.adiciona(negociacao)); // no fim, é gerado um novo array que é percorrido e, a cada iteração, o novo item é adicionado na lista de negociações
+
+					this._mensagem.texto = 'Negociações importadas com sucesso!';
 				} else {
-					console.log('Não foi possível obter as negociações do servidor!');
+					console.log(xhr.responseText);
+					this._mensagem.texto = 'Não foi possível obter as negociações!';
 				}
 			}
 		};
