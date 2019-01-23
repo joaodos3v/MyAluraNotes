@@ -325,3 +325,31 @@
 ### Atividade 09 - DateHelper é um Factory?
 - Vale lembrar que deve-se tomar muito cuidado para saber **quando usar uma `Factory`**.
 	- Isso porque o padrão de projeto `Factory` ocorre quando temos uma classe que nos ajuda a criar um objeto complexo, ou seja, ela esconde de nós os detalhes de criação desse objeto. É por isso que uma classe `Factory` possui apenas um método, faz sentido, pois se tivéssemos que chamar mais de um para criar um objeto, a responsabilidade de sua criação voltaria a ficar à cargo do desenvolvedor.
+
+
+
+
+
+
+
+## Aula 04 - Importando negociações
+
+### Atividade 02 - Requisições Ajax com o objeto XMLHttpRequest
+- Nesse capítulo, será adicionada uma funcionalidade no sistema que permite que requisições *HTTP* sejam executadas para importar "negociações".
+	- Para que isso seja possível, utilizou-se o [XMLHttpRequest](https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHTTPRequest) (pois não estamos usando *jQuery*), que é um objeto que permite ao cliente transferir/capturar dados de um servidor. Esse objeto é frequentemente utilizado na programação **assíncronva**, veja [AJAX](https://developer.mozilla.org/pt-BR/docs/Web/Guide/AJAX).
+	- Fazendo uso desse objeto, basicamente "abrimos" a requisição através do método [open()](https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHttpRequest/open), no qual devemos informar qual **verbo/método *HTTP*** queremos utilizar.
+		- Além disso, precisamos indicar para **onde será essa requisição** (a *URL*).
+		- Vale lembrar que o método `open` **não executa a requisição**, apenas prepara para que ela possa ser executada.
+	- O método que **realmente executa a requisição** é o [send()](https://www.w3schools.com/xml/ajax_xmlhttprequest_send.asp).
+	- No entanto, **antes de enviar** a requisição, é necessário configurar certos detalhes da mesma:
+		- O primeiro ponto é entender que **toda requisição *AJAX* possui estados**. Abaixo, segue uma lista dos estados disponíveis para uma requisição:
+			```
+			0: requisição ainda não iniciada
+			1: conexão com o servidor estabelecida
+			2: requisição recebida
+			3: processando requisição
+			4: requisição concluída e a resposta está pronta
+			```
+			- Esses estados podem ser capturados utilizando o método [*onreadystatechange*](https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHttpRequest/onreadystatechange), que é disparado **toda vez que o estado da requisição for alterado**.
+				- Para saber o estado que a requisição se encontra atualmente, podemos utilizar o atributo ***readyState***.
+				- Porém, **sempre deve-se confirmar** se recebemos uma resposta de sucesso com o atributo ***status == 200***, tendo em vista que muitos servidores podem retornar uma mensagem válida, porém informando que um erro ocorreu. Contudo, esse caso, o *status* será alterado e seria filtrado pela condicional que confirma se *status == 200*.
