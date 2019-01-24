@@ -361,3 +361,8 @@
 
 ### Atividade 04 - Separando as responsabilidades
 - Existe uma *convenção* quando se trabalha com **programação assíncrona** conhecida como `Error First` ([entenda](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/)), que significa que em um método asśincrono, seu primeiro parâmetro deve ser reservado para um **objeto de erro**. Já o **resultado da operação** invocada pelo método deve vir como segundo parâmetro.
+
+### Atividade 08 - Que tal enviar dados para o servidor?
+- Vale lembrar que no protocolo `HTTP`, os dados são transmitidos no **formato texto**.
+	- Por isso, quase no fim da `function`, utilizamos o método [JSON.stringify()](https://www.w3schools.com/js/js_json_stringify.asp).
+	- Além disso, como estamos enviando um [*JSON*](https://www.json.org/), note que utilizamos o método [setRequestHeader()](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/setRequestHeader), que define o valor do cabeçalho de uma requisição `HTTP`.
