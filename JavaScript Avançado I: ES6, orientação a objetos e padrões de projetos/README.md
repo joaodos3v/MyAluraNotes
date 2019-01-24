@@ -387,7 +387,7 @@ alert(nome);
 		`/^\d{4}-\d{2}-\d{2}$/`
 		- O `ˆ` indica "**começando com**"
 		- O `$` indica "**terminando com**"
-	- Para acessar um curso específico de expressão regular: (Curso)[https://www.alura.com.br/curso-online-expressoes-regulares]
+	- Para acessar um curso específico de expressão regular: [Curso](https://www.alura.com.br/curso-online-expressoes-regulares)
 
 ### Atividade 16 - Só tem métodos estáticos...
 - **Desafio:** Como podemos evitar que alguém instancie uma classe que só possui métodos estáticos, ou seja, uma classe que não faz sentido trabalharmos com uma instância?
