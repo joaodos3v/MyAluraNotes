@@ -523,7 +523,7 @@ alert(nome);
 	- Um método desse tipo **não deve ser prefixado** com *_ (underline)*, pois ele será implementado por outras classes e isso estaria "quebrando a convenção" que diz que métodos que iniciam com *_ (underline)* são ***private***, ou seja, só devem ser invocados para própria classe onde estão declarados!
 - Vimos também que se uma classe filha herda de outra classe que **exige** um parâmetro em seu construtor, esse parâmetro deve ser enviado na instanciação da classe **filha** e essa, por sua vez, deve enviar esse parâmetro ao construtor da classe **pai** utilizando o método `super()`.
 	- No entanto, isso **não é necessário** quando o construtor da classe **que herda** possui exatamente a mesma declaração (*número de parâmetros*) da classe que **foi herdada**. 
-		- **Por favor, veja uma explicação muito detalhada disso [nesse arquivo](https://github.com/joao-vieira/MyAluraNotes/JavaScript Avançado I: ES6, orientação a objetos e padrões de projetos/Detalhando-Herança-Com-Exemplos.md)!**
+		- **Por favor, veja uma explicação muito detalhada disso [nesse arquivo](https://github.com/joao-vieira/MyAluraNotes/blob/master/JavaScript%20Avan%C3%A7ado%20I:%20ES6,%20orienta%C3%A7%C3%A3o%20a%20objetos%20e%20padr%C3%B5es%20de%20projetos/Detalhando-Heran%C3%A7a-Com-Exemplos.md)!**
 
 ### Atividade 10 - Classes abstratas, tem como?
 - Classes que não devem possuir instâncias **não deveriam** poder ser instanciadas. 
