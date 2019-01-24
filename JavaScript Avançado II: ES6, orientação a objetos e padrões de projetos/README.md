@@ -377,8 +377,16 @@
 ## Aula 05 - Combatendo Callback Hell com Promises
 
 ### Atividade 01 - O problema da vida assíncrona
-
 - Em programação, muitas vezes nos deparamos com uma situação prblemática - e, na maioria dessas vezes, nem percebemos! Essa situação é a [*Pyramid of Doom* (ou *pirâmide do destino*)](https://en.wikipedia.org/wiki/Pyramid_of_doom_(programming)).
 	- Essa situação acontece quando temos um trecho de código extremamente aninhado e, em virtude disso, sua identação acaba "adentrando" até a metade do arquivo, mais ou menos. Para que esse trecho esteja correto - **obviamente** -, é necessário fechar todas as *chaves* (**}**), estruturas condicionais, métodos, laços de repetição e demais estruturas que compõem esse trecho do código. 
 		- Ao analisar essa parte do código, veremos uma representação parecida com uma pirâmide, o que é um **forte indício que esse código apresentará um problema de legibilidade para futuras manutenções**.
 	- Além disso, muitas vezes essas situações trazem consigo um exemplo de [*Callback Hell* (ou *inferno de callback*)](http://callbackhell.com/), que acontece quando existem diversas requisições assíncronas, que precisam ser executadas em determinada ordem, e o *callback* de uma chamada assíncrona acaba contendo outra requisição que, por sua vez, em seu *callback*, conterá outra requisição e assim sucessivamente.
+
+### Atividade 02 - O padrão de projeto Promise
+- `Promise` (ou promesse) é, em resumo, **o resultado futuro de uma operação**!
+- Toda `promise` possui um método `then` (então) que será executado sempre que a "promessa for cumprida". Na *função* passada nesse método, sempre recebemos o **retorno** da `promise`.
+	- Assim como o método `then`, podemos invocar o método `catch` de uma `promise`, que permite que capturemos o erro que ocorreu enquanto a `promise` foi executada.
+- O **ES6** já suporta a `promise` nativamente.
+- Toda `promise` recebe uma `função` com **dois parâmetros** - comumente esses parâmetros são nomeados como `resolve` e `reject`.
+	- O `resolve` é uma função, na qual deve ser passada o retorno **de sucesso** da `promise` (é o que pegamos como retorno no método `then`). 
+	- Já no `reject`, devemos passar o retorno **de erro** da `promise`, caso aconteça (é o que pegamos como retorno no método `catch`).
