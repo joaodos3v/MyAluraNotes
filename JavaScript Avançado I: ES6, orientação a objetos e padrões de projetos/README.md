@@ -423,7 +423,7 @@ alert(nome);
 		```
 
 ### Atividade 04 - Totalizando o volume em nosso Template
-- Tendo em vista que em *Template Strings* não é possível executar mais do que uma instrução de código, tal como declarar uma variável e fazer um (forEach())[https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach] em seguida, um "dibre" (:laughing:) que podemos fazer é utilizar as conhecidas **(IIFE)[https://developer.mozilla.org/pt-BR/docs/Glossario/IIFE]** (*Immediately Invoked Function Expression*)
+- Tendo em vista que em *Template Strings* não é possível executar mais do que uma instrução de código, tal como declarar uma variável e fazer um [forEach()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) em seguida, um "dibre" (:laughing:) que podemos fazer é utilizar as conhecidas **[IIFE](https://developer.mozilla.org/pt-BR/docs/Glossario/IIFE)** (*Immediately Invoked Function Expression*)
 	- **Ex.:** 
 		```javascript
 		${
