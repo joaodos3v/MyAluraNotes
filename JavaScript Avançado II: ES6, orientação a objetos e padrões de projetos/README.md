@@ -397,3 +397,44 @@
 
 ### Atividade 05 - Simplificando o código
 - Código simplificado, em JavaScript, é sinônimo de *arrow function*. Apesar de existirem inúmeras formas de identar e dispor uma *arrow function*, vale sempre lembrar que **não pode haver uma quebra de linha antes da `=>`**, pois não vai funcionar!
+
+
+
+
+
+
+
+
+
+## Aula 06 - Considerações finais e exercícios bônus
+
+### Atividade 02 - Ah se eu pudesse ordenar minha tabela clicando na coluna...
+- Todo *array* em JavaScript possui o método [sort()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort).
+	- Esse método pode ser utilizado para ordenar *arrays*.
+	- Além disso, após ordenar um *array* utilizando o `sort`, caso você deseje exibí-lo em ordem decrescente, também existe o método [reverse()](https://www.w3schools.com/jsref/jsref_reverse.asp).
+	- Porém, a ordenação de *arrays* em JavaScript pode pregar algumas peças em você! Para entender mais sobre isso, leia esse [post](https://blog.alura.com.br/ordenacao-de-numeros-no-javascript-nao-funciona/).
+	- Contudo, quando temos uma lista de objetos que não sejam `string`, `números` ou `boolean` (com este tipoe, `false` vem primeiro e depois `true`), precisamos passar o critério de ordenação para o método `sort`.
+	 - Para criarmos nosso método de ordenação customizado, **a regra é a seguinte**:
+	 	- Com o critério selecionado, se o valor retornado for `0` não há alteração a ser feita;
+	 	- Se o valor retornado for positivo, `b` deve vir antes de `a`;
+	 	- Se o valor retornado for negativo, `a` deve vir antes de `b`.
+	 	- **Ex.:**
+	 		```javascript
+	 		let negociacoes = [
+			    new Negociacao(new Date(), 7, 200),
+			    new Negociacao(new Date(), 1, 300),
+			    new Negociacao(new Date(), 8, 100)
+			]
+			negociacoes.sort((a, b) => a.quantidade -  b.quantidade);
+			negociacoes.forEach(negociacao => console.log(negociacao));
+	 		```
+	 		- E se quisermos uma ordem decrescente? Só inverter a subtração:
+	 			```javascript
+		 		let negociacoes = [
+				    new Negociacao(new Date(), 7, 200),
+				    new Negociacao(new Date(), 1, 300),
+				    new Negociacao(new Date(), 8, 100)
+				]
+				negociacoes.sort((a, b) => b.quantidade -  a.quantidade); // agora é b menos a!
+				negociacoes.forEach(negociacao => console.log(negociacao));
+		 		```
