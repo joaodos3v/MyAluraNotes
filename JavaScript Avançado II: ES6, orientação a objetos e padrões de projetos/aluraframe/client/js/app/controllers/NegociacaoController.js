@@ -35,58 +35,18 @@ class NegociacaoController {
 
 		let service = new NegociacaoService();
 
-		service.obterNegociacoesDaSemana()
-			.then( negociacoes => {
-				negociacoes.forEach(negociacao => this._listaNegociacoes.adiciona(negociacao));
-				this._mensagem.texto = 'Negociações da semana obtidas com sucesso!';
-			})
-			.catch( erro => this._mensagem.texto = erro );
+		Promise.all([
+			service.obterNegociacoesDaSemana(), 
+			service.obterNegociacoesDaSemanaAnterior(), 
+			service.obterNegociacoesDaSemanaRetrasada()
+		]).then(negociacoes => {
+			negociacoes
+				.reduce((arrayAchatado, array) => arrayAchatado.concat(array), [])
+				.forEach(negociacao => this._listaNegociacoes.adiciona(negociacao));
 
-		service.obterNegociacoesDaSemanaAnterior()
-			.then( negociacoes => {
-				negociacoes.forEach(negociacao => this._listaNegociacoes.adiciona(negociacao));
-				this._mensagem.texto = 'Negociações da semana anterior obtidas com sucesso!';
-			})
-			.catch( erro => this._mensagem.texto = erro );
-
-		service.obterNegociacoesDaSemanaRetrasada()
-			.then( negociacoes => {
-				negociacoes.forEach(negociacao => this._listaNegociacoes.adiciona(negociacao));
-				this._mensagem.texto = 'Negociações da semana retrasada obtidas com sucesso!';
-			})
-			.catch( erro => this._mensagem.texto = erro );
-
-
-		/*
-		service.obterNegociacoesDaSemana((erro, negociacoes) => {
-			if(erro) {
-				this._mensagem.texto = erro;
-				return;
-			}
-
-			negociacoes.forEach(negociacao => this._listaNegociacoes.adiciona(negociacao));
-			
-			service.obterNegociacoesDaSemanaAnterior((erro, negociacoes) => {
-				if(erro) {
-					this._mensagem.texto = erro;
-					return;
-				}
-
-				negociacoes.forEach(negociacao => this._listaNegociacoes.adiciona(negociacao));
-				
-				service.obterNegociacoesDaSemanaRetrasada((erro, negociacoes) => {
-					if(erro) {
-						this._mensagem.texto = erro;
-						return;
-					}
-
-					negociacoes.forEach(negociacao => this._listaNegociacoes.adiciona(negociacao));
-					this._mensagem.texto = 'Negociações importadas com sucesso!';
-				});
-			});
-		});
-		*/
-
+			this._mensagem.texto = 'Negociações importadas com sucesso!';
+		})
+		.catch(error => this._mensagem.texto = error);
 	}
 
 

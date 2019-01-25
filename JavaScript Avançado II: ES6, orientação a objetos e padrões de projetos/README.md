@@ -383,10 +383,14 @@
 	- Além disso, muitas vezes essas situações trazem consigo um exemplo de [*Callback Hell* (ou *inferno de callback*)](http://callbackhell.com/), que acontece quando existem diversas requisições assíncronas, que precisam ser executadas em determinada ordem, e o *callback* de uma chamada assíncrona acaba contendo outra requisição que, por sua vez, em seu *callback*, conterá outra requisição e assim sucessivamente.
 
 ### Atividade 02 - O padrão de projeto Promise
-- `Promise` (ou promesse) é, em resumo, **o resultado futuro de uma operação**!
+- [Promise (ou promessa)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise) é, em resumo, **o resultado futuro de uma operação**!
 - Toda `promise` possui um método `then` (então) que será executado sempre que a "promessa for cumprida". Na *função* passada nesse método, sempre recebemos o **retorno** da `promise`.
 	- Assim como o método `then`, podemos invocar o método `catch` de uma `promise`, que permite que capturemos o erro que ocorreu enquanto a `promise` foi executada.
 - O **ES6** já suporta a `promise` nativamente.
 - Toda `promise` recebe uma `função` com **dois parâmetros** - comumente esses parâmetros são nomeados como `resolve` e `reject`.
 	- O `resolve` é uma função, na qual deve ser passada o retorno **de sucesso** da `promise` (é o que pegamos como retorno no método `then`). 
 	- Já no `reject`, devemos passar o retorno **de erro** da `promise`, caso aconteça (é o que pegamos como retorno no método `catch`).
+
+### Atividade 03 - Pyramid of Doom novamente? Claro que não, Promise.all nela!
+- A `promise` possui um recuro muito interessante para tratar a seguinte situação: se existe uma **sequência de operações assíncronas** que desejamos executar em uma **determinada ordem**, podemos utilizar o [*Promise.all()*](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise/all), que vai tratar todas as `promise` como uma coisa só, abstraindo para o programador a interação individual com cada uma delas.
+- **Curiosidade:** quando desejamos "achatar" um *array* que contém diversos *arrays* em seu conteúdo, ou seja, deixar todos os elementos desses *arrays* secundários na "raiz" do *array* principal, dizemos que estamos fazendo um [*flatten*](https://medium.freecodecamp.org/reduce-f47a7da511a9);
