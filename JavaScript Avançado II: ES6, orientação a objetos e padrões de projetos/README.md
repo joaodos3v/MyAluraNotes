@@ -393,4 +393,4 @@
 
 ### Atividade 03 - Pyramid of Doom novamente? Claro que não, Promise.all nela!
 - A `promise` possui um recuro muito interessante para tratar a seguinte situação: se existe uma **sequência de operações assíncronas** que desejamos executar em uma **determinada ordem**, podemos utilizar o [*Promise.all()*](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise/all), que vai tratar todas as `promise` como uma coisa só, abstraindo para o programador a interação individual com cada uma delas.
-- **Curiosidade:** quando desejamos "achatar" um *array* que contém diversos *arrays* em seu conteúdo, ou seja, deixar todos os elementos desses *arrays* secundários na "raiz" do *array* principal, dizemos que estamos fazendo um [*flatten*](https://medium.freecodecamp.org/reduce-f47a7da511a9);
+- **Curiosidade:** quando desejamos "achatar" um *array* que contém diversos *arrays* em seu conteúdo, ou seja, deixar todos os elementos desses *arrays* secundários na "raiz" do *array* principal, dizemos que estamos fazendo um [*flatten*](https://medium.freecodecamp.org/reduce-f47a7da511a9).
