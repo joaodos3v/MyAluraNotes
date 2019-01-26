@@ -438,3 +438,11 @@
 				negociacoes.sort((a, b) => b.quantidade -  a.quantidade); // agora é b menos a!
 				negociacoes.forEach(negociacao => console.log(negociacao));
 		 		```
+
+
+### Atividade 04 - Ah se meu código funcionasse no Firefox...
+- Quando um determinado trecho de código lança um erro com a instrução `throw`, esse código está indicando que houve um erro e que esse trecho onde o erro ocorreu não vai tratá-lo, mas sim lançá-lo para quem chamou o método.
+	- Por isso, quando temos um trecho de código que pode apresentar algum erro, geralmente envolvemos essa área do programa em uma instrução `try`. No bloco `try` quando ocorre um lançamento com `throw`, podemos capturar o erro lançado no bloco `catch`.
+	- O funcionamento é, basicamente: quando um erro é lançado e o exato código que o gerou não possui nenhum tipo de tratamento, esse erro "*sobe na pilha*".
+		- Nesse ponto, o interpretador JavaScript tentará identificar se o código que chamou o trecho que causou o erro está preparado para tratar essa exceção. Se estiver, o código será diretamente direcionado para a cláusula `catch` e, nessa cláusula, podemos ter acesso ao erro lançado pela instrução `throw`, por exemplo.
+			- No entanto, se **não** ocorrer erro algum, todas as instruções contidas no bloco `try` serão executadas e a cláusula `catch` será ignorada.
