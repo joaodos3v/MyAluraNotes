@@ -446,3 +446,7 @@
 	- O funcionamento é, basicamente: quando um erro é lançado e o exato código que o gerou não possui nenhum tipo de tratamento, esse erro "*sobe na pilha*".
 		- Nesse ponto, o interpretador JavaScript tentará identificar se o código que chamou o trecho que causou o erro está preparado para tratar essa exceção. Se estiver, o código será diretamente direcionado para a cláusula `catch` e, nessa cláusula, podemos ter acesso ao erro lançado pela instrução `throw`, por exemplo.
 			- No entanto, se **não** ocorrer erro algum, todas as instruções contidas no bloco `try` serão executadas e a cláusula `catch` será ignorada.
+
+### Atividade 06 - Ah se meu código funcionasse no Edge!
+- Um **polyfill** é um *script* que emula o comportamento de um recurso quando esse não é suportado para garantir que o código funcione sem ser necessário abdicar do que é mais novo.
+
