@@ -454,3 +454,47 @@
 - Nesse pequeno sistema, durante o desenvolvimento, mostrou-se necessário utilizar vários '*hacks*' da linguagem para que fosse possível torná-lo compatível com o maior número possível de navegadores, inclusive em suas versões mais defasadas.
 - No entanto, é possível que todo o código escrito em ES6 funcione em navegadores que nem suportem a nova versão do JavaScript. Para isso, é necessário o uso de um ***transpiler***.
 	- Vale salientar que os grandes vilões de compatibilidade do código JavaScript são os browsers mobile. A solução com transpiler é uma solução que abarca também esses dispositivos.
+
+### Atividade 08 - Ah se ... peraí, o que é um transpiler mesmo?
+- Um ***transpiler*** é um compilador de código fonte para código fonte. Ou seja, em linguagens como C, compilamos o código fonte para um código binário para que esse rode em nosso sistema operacional. Já um transpiler poderia converter o código escrito em C para JavaScript, ou seja, é um compilador que traduz o código fonte de uma linguagem para outra.
+	- No caso do JavaScript, o truque é compilar o código fonte (nossos arquivos JS) para JavaScript. Parece não fazer sentido né? Porém, nesse caso, estaríamos convertendo um código em ES6 para ES5! Nesse contexto, o programador organiza seu código em ES6 para ajudar na manutenção e legibilidade, mas na hora que esse código for entrar em produção ele é todo convertido para ES5, ou seja, toda feature do ES6 é implementada (muitas vezes verbosamente) usando ES5! Com isso, qualquer navegador do mercado será capaz de compreender nosso código.
+	- Veja um exemplo de código em ES6:
+		```javascript
+		class Pessoa {
+
+		    constructor(nome, sobrenome = '') {
+		        this.nome = nome;
+		        this.sobrenome = sobrenome;
+		    }
+
+		    obterNomeCompleto() {
+		        return `${this.nome} ${this.sobrenome}`;
+		    }
+
+		    static imprimePessoas(pessoas) {
+		        pessoas.forEach((pessoa) => console.log(pessoa.nome));
+		    }
+		}
+		```
+	- Agora veja o mesmo código, '*transpilado*' para ES5 através de um ***transpiler***:
+		```javascript
+		function Pessoa(nome, sobrenome) {
+
+		    this.nome = nome;
+		    this.sobrenome = sobrenome || ''
+		}
+
+		Pessoa.prototype.obterNomeCompleto = function() {
+		    return this.nome + ' ' + this.sobrenome
+		}
+
+		Pessoa.imprimePessoa(pessoas) {
+		    pessoas.forEach(function(pessoa) {
+		        console.log(pessoa.nome);
+		    });
+		}
+		```
+		- A ideia é que no futuro o uso de ***transpilers*** não seja mais necessário. Contudo, continuar usando um ***transpiler*** permitirá o uso de recursos mais recentes da linguagem sem termos que esperar que sejam implementados pelos navegadores.
+
+### Atividade 09 - Ah se eu pudesse aplicar o que aprendi no Node.js...
+- Tudo (*arrow functions*, *proxy*, classes...) o que aprendemos de **ES6** pode ser aplicado na plataforma [Node.js](https://nodejs.org/en/), mas tem um porém: você DEVE usar a versão 6 ou superior do Node.js. Versões anteriores não suportam totalmente os recursos que foram passados neste curso.
