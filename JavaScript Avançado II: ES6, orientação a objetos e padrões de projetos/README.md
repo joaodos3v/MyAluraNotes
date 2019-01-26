@@ -450,3 +450,7 @@
 ### Atividade 06 - Ah se meu código funcionasse no Edge!
 - Um **polyfill** é um *script* que emula o comportamento de um recurso quando esse não é suportado para garantir que o código funcione sem ser necessário abdicar do que é mais novo.
 
+### Atividade 07 - Ah se meu código funcionasse em TODOS OS NAVEGADORES...
+- Nesse pequeno sistema, durante o desenvolvimento, mostrou-se necessário utilizar vários '*hacks*' da linguagem para que fosse possível torná-lo compatível com o maior número possível de navegadores, inclusive em suas versões mais defasadas.
+- No entanto, é possível que todo o código escrito em ES6 funcione em navegadores que nem suportem a nova versão do JavaScript. Para isso, é necessário o uso de um ***transpiler***.
+	- Vale salientar que os grandes vilões de compatibilidade do código JavaScript são os browsers mobile. A solução com transpiler é uma solução que abarca também esses dispositivos.
