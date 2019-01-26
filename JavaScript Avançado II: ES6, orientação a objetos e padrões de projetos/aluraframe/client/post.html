@@ -28,6 +28,7 @@
         <button class="btn btn-primary" type="submit" onclick="sendPost(event)">Enviar dados para servidor</button>
     </form>
 
+    <script src="js/app/services/HttpService.js"></script>
     <script>
 
         // Minha solução
@@ -37,74 +38,30 @@
             console.log("Enviando post");
 
             //aqui você deve ler os dados do formulário
-            let data = document.querySelector('#data');
-            let quantidade = document.querySelector('#quantidade');
-            let valor = document.querySelector('#valor');
-
-            //construir o json
-            let json = {'data': data.value, 'quantidade': quantidade.value, 'valor': valor.value};
-            console.log(json);
-
-            //enviar o XMLHttpRequest
-            let xhr = new XMLHttpRequest();
-            xhr.open('POST', '/negociacoes', true);
-
-            //Envia o cabeçalho informativo adequado junto com a requisição.
-            xhr.setRequestHeader("Content-type", "application/json");
-            
-            xhr.onreadystatechange = () => {
-                if (xhr.readyState == 4) {
-                    if (xhr.status == 200) {
-                        alert('Negociação enviada com sucesso');
-                    } else {
-                        alert(`Não foi possível enviar a negociação: ${xhr.responseText}`);
-                    }
-                }
-            };
-
-            xhr.send(JSON.stringify(json));
-        }
-
-
-
-        // Soluçao do instrutor
-        function sendPostInstrutor(event) {
-
-            event.preventDefault();
-
-            console.log("Enviando post");
-
             let $ = document.querySelector.bind(document);
             inputData = $('#data');
             inputQuantidade = $('#quantidade');
             inputValor = $('#valor');
 
+            //construir o json
             let negociacao = {
                 data: inputData.value,
                 quantidade: inputQuantidade.value,
                 valor: inputValor.value
             };
+            console.log(negociacao);
 
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "/negociacoes", true);
-            xhr.setRequestHeader("Content-type", "application/json");
-
-            xhr.onreadystatechange = () => {
-
-                if (xhr.readyState == 4) {
-
-                    if (xhr.status == 200) {
-                        inputData.value = '';
-                        inputQuantidade.value = 1;
-                        inputValor.value = 0.0;
-                        inputData.focus();
-                        alert('Negociação enviada com sucesso');
-                    } else {
-                        alert(`Não foi possível enviar a negociação: ${xhr.responseText}`);
-                    }
-                }
-            }
-            xhr.send(JSON.stringify(negociacao));
+            // usando nosso serviço. Veja que nem guardei em uma variável 
+            new HttpService()
+                .post('/negociacoes', negociacao)
+                .then(() => {
+                    inputData.value = '';
+                    inputQuantidade.value = 1;
+                    inputValor.value = 0.0;
+                    inputData.focus();
+                    alert('Negociação enviada com sucesso');
+                })
+                .catch(erro => alert(`Não foi possível enviar a negociação: ${erro}`));
         }
     </script>
 </body>
