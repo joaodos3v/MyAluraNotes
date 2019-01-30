@@ -37,3 +37,10 @@
 ### Atividade 05 - Só acredito vendo: listando objetos de uma store 
 - Para listar os registros de um *Object Store*, devemos abrir um `cursor`. [Veja mais](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/openCursor).
 	- Assim como o método `add()` de uma *store*, o `cursor` também possui os atributos `onsuccess` e `onerror`.
+
+
+
+
+
+
+## Aula 02 - Gerenciando nossa conexão com o pattern Factory
