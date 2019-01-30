@@ -79,3 +79,16 @@
 ### Atividade 13 - Para saber mais: limite de espaço
 - **`OBSERVAÇÃO`**: Cada browser define um limite de tamanho para os dados armazenados no IndexedDB sem que seja necessário autorização do usuário. Se esse limite for excedido, uma caixa de diálogo pedirá a confirmação do usuário. Caso ele negue, o evento `onerror` será executado. O cálculo do limite disponível muitas vezes é calculado dinamicamente e varia de browser para browser, como está escrito na documentação:
 	- *"The process by which the browser works out how much space to allocate to web data storage and what to delete when that limit is reached is not simple, and differs between browsers."* ([Fonte](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)) 
+
+
+
+
+
+
+
+## Aula 03 - Padronizando acesso aos dados com o pattern DAO
+
+### Atividade 01 - O padrão de projeto DAO
+- **`DAO`:** Data Access Object
+	- Esse padrão de projeto visa abstrair/facilitar os detalhes de interação com um banco de dados.
+- A primeira **convenção** desse modelo que devemos saber é que quando estamos fazendo uma *persistência* do modelo `Modelo`, deve-se criar uma classe chamada **`ModeloDAO`**.
