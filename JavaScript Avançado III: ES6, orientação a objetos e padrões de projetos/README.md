@@ -60,3 +60,18 @@
 		- [Link 2](http://me.dt.in.th/page/JavaScript-override/)
 - Nessa atividade também aprendemos que o *ES2015+* nos permite usar a palavra reservada [**const**](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/const). Como o próprio nome já indica - além de ser familiar com outras linguagens de programação -, essa palavra reservada é utilizada para definir **constantes** em nosso código.
 	- Como "recordar é viver (by: Flávio Almeida)", uma **constante não pode ter seu valor inicial reatribuído/substiuído**.
+
+### Atividade 12 - Para saber mais: variáveis declaradas com const são realmente imutáveis?
+- Vale ressaltar que a palavra `const` não garante a imutabilidade de uma variável, apenas garante que essa variável não poderá sofrer uma **nova atribuição de valor**. No entanto, vejamos uma situação em que pode acontecer algo inesperado:
+	- Exemplo funcional:
+		```javascript
+		const hoje = new Date();
+		hoje = new Date();  // dá erro, pois é uma nova atribuição de valor!
+		```
+	- Exemplo inesperado:
+		```javascript
+		const hoje = new Date();
+		hoje.setDate(5);
+		console.log(hoje.getDate()) ; // alterou o dia para 5, pois não estamos atribuindo um novo valor a variável usando o operador =, mas estamos alterando as propriedades do objeto Date por meio de seus métodos!
+		```
+		- **Cuidado com isso!**
