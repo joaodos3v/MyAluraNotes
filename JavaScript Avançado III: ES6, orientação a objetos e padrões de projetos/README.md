@@ -44,3 +44,8 @@
 
 
 ## Aula 02 - Gerenciando nossa conexão com o pattern Factory
+
+### Atividade 04 - O padrão de projeto Module Pattern
+- De uma forma bem abstrata e "grosseira", esse padrão de projeto transforma trechos de códigos em **módulos**. Esses módulos podem ser entendidos como uma unidade de código *confinada*, onde tudo que estiver armazenado nessa unidade não pode ser acessado "por ninguém" (de local nenhum na aplicação).
+- **Função anônima** é uma função sem nome.
+	- Esse tipo de função também possui outro adjetivo (mas que não quer dizer a mesma coisa): **função auto invocada**. Isso porque, uma função anônima será "chamada" por ela própria.
