@@ -47,5 +47,16 @@
 
 ### Atividade 04 - O padrão de projeto Module Pattern
 - De uma forma bem abstrata e "grosseira", esse padrão de projeto transforma trechos de códigos em **módulos**. Esses módulos podem ser entendidos como uma unidade de código *confinada*, onde tudo que estiver armazenado nessa unidade não pode ser acessado "por ninguém" (de local nenhum na aplicação).
+	- Leia mais sobre o assunto em:
+		- [Link 1](https://nandovieira.com.br/design-patterns-no-javascript-module)
+		- [Link 2](https://coryrylan.com/blog/javascript-module-pattern-basics)
 - **Função anônima** é uma função sem nome.
 	- Esse tipo de função também possui outro adjetivo (mas que não quer dizer a mesma coisa): **função auto invocada**. Isso porque, uma função anônima será "chamada" por ela própria.
+
+### Atividade 05 - Monkey Patch: grandes poderes trazem grandes responsabilidades
+- De forma breve, *Monkey Patching* é uma forma de forçar uma API, Classe, método ou atributo a agir de uma forma diferente à qual ele está "acostumado". Em outras palavras, é uma forma de **sobrescrever o comportamento de um recurso da linguagem**.
+	- Leia mais sobre o assunto em:
+		- [Link 1](https://www.audero.it/blog/2016/12/05/monkey-patching-javascript/)
+		- [Link 2](http://me.dt.in.th/page/JavaScript-override/)
+- Nessa atividade também aprendemos que o *ES2015+* nos permite usar a palavra reservada [**const**](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/const). Como o próprio nome já indica - além de ser familiar com outras linguagens de programação -, essa palavra reservada é utilizada para definir **constantes** em nosso código.
+	- Como "recordar é viver (by: Flávio Almeida)", uma **constante não pode ter seu valor inicial reatribuído/substiuído**.
