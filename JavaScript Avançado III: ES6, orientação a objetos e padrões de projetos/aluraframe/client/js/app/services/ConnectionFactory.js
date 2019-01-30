@@ -17,20 +17,36 @@ class ConnectionFactory {
 
 			openRequest.onupgradeneeded = e => {
 
-
+				ConnectionFactory._createStores(e.target.result);
 			};
 
 
 			openRequest.onsuccess = e => {
 
+				resolve(e.target.result);
 			};
 
 
 			openRequest.onerror = e => {
 
+				console.log(e.target.error);
+				reject(e.target.error.name);
 			};
 
 
+		});
+	}
+
+
+	static _createStores(connection) {
+		
+		stores.forEach(store => {
+
+			if(connection.objectStoreNames.contains(store)) 
+				connection.deleteObjectStore(store);
+
+
+			connection.createObjectStore(store, {autoIncrement: true});
 		});
 	}
 
