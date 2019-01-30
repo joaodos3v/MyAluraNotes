@@ -33,3 +33,7 @@
 	- Por fim, caso o objetivo seja inserir um novo registro no *Object Store*, podemos utilizar o método `add()` que está disponível na variável que armazenou o retorno do método `objectStore()`.
 		- O método `add()`, por sua vez, retorna uma **requisição** que nos permite adicionar esse registro (pois a operação pode ter sido executada com sucesso ou não). Em virtude dessa possibilidade, essa **requisição** de retorno possui dois atributos: `onsuccess` e `onerror`.
 			- Vale lembrar que **sempre** que deseja-se inserir um registro em um *Object Store*, esse registro deve estar acompanhado de um `id` ou **ser único** dentro daquele *Object Store*.
+
+### Atividade 05 - Só acredito vendo: listando objetos de uma store 
+- Para listar os registros de um *Object Store*, devemos abrir um `cursor`. [Veja mais](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/openCursor).
+	- Assim como o método `add()` de uma *store*, o `cursor` também possui os atributos `onsuccess` e `onerror`.
