@@ -95,3 +95,8 @@
 
 ### Atividade 04 - Removendo todas as negociações
 - Para **remover** todos os registros de um *Object Store*, pode-se realizar o mesmo procedimento executado para listar os registros (abrir uma conexão - capturar uma transação - selecionar um objectStore - obter um cursor). No entanto, ao invés de utilizar o método `openCursor()` para obter um cursor, devemos utilizar o método `clear()`.
+
+### Atividade 05 - O padrão DAO
+- Em um breve resumo, **quais as vantagens de se usar classes com o padrão DAO**?
+	- A vantagem está relacionada com a capacidade de isolar todo o código que acessa seu repositório de dados em **um'único lugar**. Assim, toda vez que algum desenvolvedor precisar realizar operações de persistência, ele verá que existe um único local para isso, seus *DAO's*.
+	- Em um nível um pouco mais técnico, o DAO faz parte da *camada de persistência*, funcionando como uma "fachada" para a API do *IndexedDB* (nesse caso). Com isso, obtemos a vantagem da **abstração**, pois para utilizar o DAO, um desenvolvedor não obrigatoriamente precisa saber os detalhes do `store` ou do `cursor`.
