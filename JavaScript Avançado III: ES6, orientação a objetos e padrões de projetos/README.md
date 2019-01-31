@@ -92,3 +92,6 @@
 - **`DAO`:** Data Access Object
 	- Esse padrão de projeto visa abstrair/facilitar os detalhes de interação com um banco de dados.
 - A primeira **convenção** desse modelo que devemos saber é que quando estamos fazendo uma *persistência* do modelo `Modelo`, deve-se criar uma classe chamada **`ModeloDAO`**.
+
+### Atividade 04 - Removendo todas as negociações
+- Para **remover** todos os registros de um *Object Store*, pode-se realizar o mesmo procedimento executado para listar os registros (abrir uma conexão - capturar uma transação - selecionar um objectStore - obter um cursor). No entanto, ao invés de utilizar o método `openCursor()` para obter um cursor, devemos utilizar o método `clear()`.
