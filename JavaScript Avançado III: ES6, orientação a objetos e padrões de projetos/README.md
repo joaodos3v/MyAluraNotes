@@ -164,3 +164,17 @@
 - Caso você não queira ter o trabalho de implementar padrões de projeto e tratar o IndexedDB da sua forma, **obviamente** alguém deixou algo pronto para facilitar nossa vida. Portanto, algumas sugestões de uso são:
 	- [Dexie.js](https://dexie.org/)
 	- [db.js](http://aaronpowell.github.io/db.js/)
+
+
+
+
+
+
+
+
+
+## Aula 04 - Lapidando um pouco mais nossa aplicação
+
+### Atividade 01 - Ops! Não podemos importar negociações duplicadas.
+- Como já sabemos, todo *array* em JavaScript possui o método [`filter`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filtro).
+	- O método `filter` permite que o desenvolvedor insira uma "peneira" no seu código, ou seja, uma condicional que dirá se o elemento que está sendo verificado naquele momento se enquadra (ou não) no filtro estabelecido. Ao final de suas operações, esse método retorna um **novo** *array* com todos os elementos que passaram no teste/condição.
