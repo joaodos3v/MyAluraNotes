@@ -178,3 +178,33 @@
 ### Atividade 01 - Ops! Não podemos importar negociações duplicadas.
 - Como já sabemos, todo *array* em JavaScript possui o método [`filter`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filtro).
 	- O método `filter` permite que o desenvolvedor insira uma "peneira" no seu código, ou seja, uma condicional que dirá se o elemento que está sendo verificado naquele momento se enquadra (ou não) no filtro estabelecido. Ao final de suas operações, esse método retorna um **novo** *array* com todos os elementos que passaram no teste/condição.
+
+
+### Atividade 02 - Comparação entre objetos
+- **CURIOSIDADE:** o JavaScript possui algumas peculiaridades quando o assunto é **comparação**.
+	- Por exemplo: quando estamos comparando variáveis com `tipos literais` (para quem programa em Java, por exemplo, leia-se `tipos primitivos`) como **`string`, `number` e `boolean`**, ao usar `==`, o JavaScript compara se os valores armazenados nessas variáveis são iguais.
+	- No entanto, em qualquer outra comparação, como em um tipo `new Date()`, por exemplo - assim como em outras linguagens -, o JavaScript compara se essas variáveis apontam para o mesmo objeto, em memória.
+	- Execute os exemplos abaixo caso queira visualizar essa situação:
+		```javascript
+			// Caso 1: true
+			var nome1 = 'João';
+			var nome2 = 'João';
+			nome1 == nome2
+
+			// Caso 2: true
+			var x = 10;
+			var y = 10;
+			x == y
+
+			// Caso 3: false
+			var hoje = new Date('2019-00-31');
+			var today = new Date('2019-00-31');
+			hoje == today
+		```
+		- **`MACETE`:** para que seja possível comparar dois objetos em JavaScript de modo que não seja necessário comparar seus atributos, podemos utilizar o já conhecido `JSON.stringify` (lembre que **tipos literais** têm seus **valores** comparados, não sua **referência**). Veja:
+			```javascript
+			// Caso 3: agora é true!
+			var hoje = new Date('2019-00-31');
+			var today = new Date('2019-00-31');
+			JSON.stringify(hoje) == JSON.stringify(today)
+			```
