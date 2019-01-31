@@ -30,4 +30,43 @@ class NegociacaoDAO {
 		});
 	}
 
+
+	listaTodos() {
+
+		return new Promise((resolve, reject) => {
+
+			let cursor = this._connection
+				.transaction([this._store], 'readwrite')
+				.objectStore(this._store)
+				.openCursor();
+
+			let negociacoes = [];
+
+			cursor.onsuccess = e => {
+				let atual = e.target.result;
+				
+				if(atual) { // Se o valor do ponteiro atual é diferente de null, ou seja, ainda existem registros para serem iterados
+					
+					let dado = atual.value; // => Nesse ponteiro, me retorne o dado armazenado
+
+					negociacoes.push(new Negociacao(dado._data, dado._quantidade, dado._valor));
+
+					atual.continue(); // Chama onsuccess novamente, porém o ponteiro vai avançar uma posição
+				} else {
+
+					resolve(negociacoes);
+				}
+			};
+
+
+			cursor.onerror = e => {
+
+				console.log(e.target.error.name);
+				reject('Não foi possível listar as negociações!');
+			};
+			
+		});
+	}
+
+
 }

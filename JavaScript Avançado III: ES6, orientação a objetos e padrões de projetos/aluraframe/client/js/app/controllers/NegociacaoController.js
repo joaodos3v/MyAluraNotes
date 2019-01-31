@@ -20,6 +20,15 @@ class NegociacaoController {
 		);
 
 		this._ordemAtual = ''; // quando a página for carregada, não tem critério. Só passa a ter quando ele começa a clicar nas colunas
+
+
+		ConnectionFactory
+			.getConnection()
+			.then(connection => new NegociacaoDAO(connection))
+			.then(dao => dao.listaTodos())
+			.then(negociacoes => 
+				negociacoes.forEach(negociacao => 
+					this._listaNegociacoes.adiciona(negociacao)));
 	}
 
 
