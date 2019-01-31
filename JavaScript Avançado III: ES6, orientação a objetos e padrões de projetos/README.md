@@ -100,3 +100,67 @@
 - Em um breve resumo, **quais as vantagens de se usar classes com o padrão DAO**?
 	- A vantagem está relacionada com a capacidade de isolar todo o código que acessa seu repositório de dados em **um'único lugar**. Assim, toda vez que algum desenvolvedor precisar realizar operações de persistência, ele verá que existe um único local para isso, seus *DAO's*.
 	- Em um nível um pouco mais técnico, o DAO faz parte da *camada de persistência*, funcionando como uma "fachada" para a API do *IndexedDB* (nesse caso). Com isso, obtemos a vantagem da **abstração**, pois para utilizar o DAO, um desenvolvedor não obrigatoriamente precisa saber os detalhes do `store` ou do `cursor`.
+
+### Atividade 09 - Para saber mais: IndexedDB e transações
+- Esse tópico foi criado apenas para salientar que o IndexDB trabalha um pouco diferente dos bancos de dados tradicionais:
+	- **Transações *auto commited*:** quando uma operação que obtém uma transação é realizada com sucesso (evento `onsuccess` é chamado), essa **transação é fechada automaticamente**.  
+		- É por causa disso que todas as interações com o banco solicitam uma nova transação.
+	- **Operações são canceladas com o método `abort`:** para realizar algo semelhante ao `rollback` dos bancos de dados relacionais, podemos invocar o método `abort()`. Veja o exemplo:
+		```javascript
+		ConnectionFactory.
+		    .getConnection()
+		    .then(connection => {
+		            let transaction = connection.transaction(['negociacoes'], 'readwrite');
+		            let store = transaction.objectStore('negociacoes');
+
+		            let negociacao = new Negociacao(new Date(), 1, 200);
+		            let request = store.add(negociacao);
+
+		            // #### VAI CANCELAR A TRANSAÇÃO. O evento onerror será chamado.
+		            transaction.abort(); 
+
+		            request.onsuccess = e => {
+		                console.log('Negociação incluida com sucesso');
+		            };
+
+		            request.onerror = e => {
+		                console.log('Não foi possível incluir a negociação');
+		            };
+		    });
+		```
+		    - Esse código exibirá a seguinte mensagem de erro: `DOMException: The transaction was aborted, so the request cannot be fulfilled.`
+		- Porém, para que não seja necessário tratar uma operação **abortada** de uma operação com **erro de execução**, sendo que elas são coisas diferentes, podemos tratar erros de uma operação **abortada** utilizando o método `onabort` da transação.
+			```javascript
+			ConnectionFactory.
+			    .getConnection()
+			    .then(connection => {
+			        let transaction = connection.transaction(['negociacoes'], 'readwrite');
+		            let store = transaction.objectStore('negociacoes');
+
+		            let negociacao = new Negociacao(new Date(), 1, 200);
+		            let request = store.add(negociacao);
+
+		            // #### VAI CANCELAR A TRANSAÇÃO. O evento onabort será chamado.
+		            transaction.abort(); 
+
+		            transaction.onabort = e => {
+		                console.log(e);
+		                console.log('Transação abortada');
+		            };
+
+		            request.onsuccess = e => {
+		                console.log('Negociação incluida com sucesso');
+		            };
+
+		            request.onerror = e => {
+		                console.log('Não foi possível incluir a negociação');
+		            };
+
+			    });
+			```
+
+
+### Atividade 10 - Para saber mais: bibliotecas que encapsulam o IndexedDB
+- Caso você não queira ter o trabalho de implementar padrões de projeto e tratar o IndexedDB da sua forma, **obviamente** alguém deixou algo pronto para facilitar nossa vida. Portanto, algumas sugestões de uso são:
+	- [Dexie.js](https://dexie.org/)
+	- [db.js](http://aaronpowell.github.io/db.js/)
