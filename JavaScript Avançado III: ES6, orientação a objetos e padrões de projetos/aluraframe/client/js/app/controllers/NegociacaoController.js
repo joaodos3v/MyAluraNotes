@@ -21,23 +21,20 @@ class NegociacaoController {
 
 		this._ordemAtual = ''; // quando a página for carregada, não tem critério. Só passa a ter quando ele começa a clicar nas colunas		
 
+		this._service = new NegociacaoService();
+
 		this._init();
 	}
 
 
 	_init() {
 
-		ConnectionFactory
-			.getConnection()
-			.then(connection => new NegociacaoDAO(connection))
-			.then(dao => dao.listaTodos())
-			.then(negociacoes => 
-				negociacoes.forEach(negociacao => 
+		this._service
+			.lista()
+			.then(negociacoes =>
+				negociacoes.forEach(negociacao =>
 					this._listaNegociacoes.adiciona(negociacao)))
-			.catch(erro => {
-				console.log(erro);
-				this._mensagem.texto = erro;
-			});
+			.catch(erro => this._mensagem.texto = erro);
 
 
 		setInterval(() => {
@@ -52,7 +49,7 @@ class NegociacaoController {
 
 		let negociacao = this._criaNegociacao();
 
-		new NegociacaoService()
+		this._service
 			.cadastra(negociacao)
 			.then(mensagem => {
 				this._listaNegociacoes.adiciona(negociacao);
@@ -65,9 +62,7 @@ class NegociacaoController {
 
 	importaNegociacoes() {
 
-        let service = new NegociacaoService();
-
-        service.obterNegociacoes()
+        this._service.obterNegociacoes()
         	.then(negociacoes => 
         		negociacoes.filter(negociacao =>
         			!this._listaNegociacoes.negociacoes.some(negociacaoExistente =>
@@ -83,14 +78,13 @@ class NegociacaoController {
 
 	apaga() {
 
-		ConnectionFactory
-			.getConnection()
-			.then(connection => new NegociacaoDAO(connection))
-			.then(dao => dao.apagaTodos())
-			.then(mensagem => {
-				this._mensagem.texto = mensagem;
-				this._listaNegociacoes.esvazia();
-			});
+		this._service
+	        .apaga()
+	        .then(mensagem => {
+	            this._mensagem.texto = mensagem;
+	            this._listaNegociacoes.esvazia();
+	        })
+	        .catch(erro => this._mensagem.texto = erro);
 	}
 
 
