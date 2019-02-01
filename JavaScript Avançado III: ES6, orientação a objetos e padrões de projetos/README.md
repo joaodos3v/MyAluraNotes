@@ -179,7 +179,6 @@
 - Como já sabemos, todo *array* em JavaScript possui o método [`filter`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filtro).
 	- O método `filter` permite que o desenvolvedor insira uma "peneira" no seu código, ou seja, uma condicional que dirá se o elemento que está sendo verificado naquele momento se enquadra (ou não) no filtro estabelecido. Ao final de suas operações, esse método retorna um **novo** *array* com todos os elementos que passaram no teste/condição.
 
-
 ### Atividade 02 - Comparação entre objetos
 - **CURIOSIDADE:** o JavaScript possui algumas peculiaridades quando o assunto é **comparação**.
 	- Por exemplo: quando estamos comparando variáveis com `tipos literais` (para quem programa em Java, por exemplo, leia-se `tipos primitivos`) como **`string`, `number` e `boolean`**, ao usar `==`, o JavaScript compara se os valores armazenados nessas variáveis são iguais.
@@ -208,3 +207,10 @@
 			var today = new Date('2019-00-31');
 			JSON.stringify(hoje) == JSON.stringify(today)
 			```
+
+### Atividade 03 - Usando o método some
+- Um método existente desde o *ES5* - mas não tão usado - que, quando utilizado em conjunto com o método `filter`, por exemplo, pode retornar bons frutos, é o [`some()`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/some).
+	- Sua execução é muito semelhanta ao `filter`.
+	- Ao ser invocado, o `some` irá percorrer todos elementos do *array*, comparando cada um desses elementos com uma "condição de busca" estipulada pelo desenvolvedor.
+	- Se em algum momento - qualquer momento - o `same` encontrar o valor procurado, o retorno de sua execução será `true` e ele, instantaneamente, irá encerrar seu *laço interno* de repetição.
+		- No entanto, se, após ter percorrido todo *array*, ele não encontrar o valor buscado, o retorno de sua execução será um `false`.
