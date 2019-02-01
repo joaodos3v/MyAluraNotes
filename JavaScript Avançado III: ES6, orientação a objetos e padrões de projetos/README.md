@@ -214,3 +214,7 @@
 	- Ao ser invocado, o `some` irá percorrer todos elementos do *array*, comparando cada um desses elementos com uma "condição de busca" estipulada pelo desenvolvedor.
 	- Se em algum momento - qualquer momento - o `same` encontrar o valor procurado, o retorno de sua execução será `true` e ele, instantaneamente, irá encerrar seu *laço interno* de repetição.
 		- No entanto, se, após ter percorrido todo *array*, ele não encontrar o valor buscado, o retorno de sua execução será um `false`.
+
+### Atividade 04 - Importando negociações automaticamente
+- **`BOA PRÁTICA`:** no `constructor` deve-se definir apenas os **atributos** da sua classe. Não é interessante que lógica, regras de negócios ou validações estejam escritas nesta etapa do código.
+	- Caso precise executar algumas tarefas logo no início da aplicação, crie um método *privado* `_init()`, por exemplo, e chame-o no fim do `constructor`.

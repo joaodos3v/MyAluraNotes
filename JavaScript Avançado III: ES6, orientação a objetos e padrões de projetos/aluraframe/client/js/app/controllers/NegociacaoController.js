@@ -19,8 +19,13 @@ class NegociacaoController {
 			'texto'
 		);
 
-		this._ordemAtual = ''; // quando a página for carregada, não tem critério. Só passa a ter quando ele começa a clicar nas colunas
+		this._ordemAtual = ''; // quando a página for carregada, não tem critério. Só passa a ter quando ele começa a clicar nas colunas		
 
+		this._init();
+	}
+
+
+	_init() {
 
 		ConnectionFactory
 			.getConnection()
@@ -33,6 +38,11 @@ class NegociacaoController {
 				console.log(erro);
 				this._mensagem.texto = erro;
 			});
+
+
+		setInterval(() => {
+			this.importaNegociacoes();
+		}, 3000);
 	}
 
 
