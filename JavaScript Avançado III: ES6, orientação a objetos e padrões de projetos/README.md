@@ -248,3 +248,14 @@
 	- Para **tratar um erro** com a *Fetch API* é muito simples. O objeto *Response*, como citado anteriormente, possui vários atributos e, para nossa sorte, um deles é o `ok`. Esse atributo sempre terá como valor `true` ou `false`.
 		- Se o *status* da resposta recebida do *backend* vai de **200 até 299**, essa requisição teve um retorno correto e o valor de `ok` será `true`. Caso contrário, o valor será `false`.
 			- Para capturar a mensagem do erro, caso ele ocorra, use *retorno.`statusText`*.
+
+### Atividade 02 - Método Post
+- Para utilizar a *Fetch API* com o método **POST**, basta que, como **2º parâmetro** da chamada, enviemos um *objeto de configuração*, que poderá conter valores como `headers`, `method` (obrigatoriamente *POST*, nesse caso), `body`. Veja abaixo um exemplo de requisição *POST*:
+	```javascript
+	fetch(url, {
+		headers: {'Content-type', 'application/json'},
+		method: 'post',
+		body: JSON.stringify(dado)
+	})
+	// tratamento do retorno aqui
+	```
