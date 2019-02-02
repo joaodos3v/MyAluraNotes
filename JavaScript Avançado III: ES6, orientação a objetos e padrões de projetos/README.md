@@ -278,3 +278,13 @@
 	- Esse processo se chama `transcompilação` e, para que ele seja possível, é necessário utilizarmos um `transpiler`.
 		- Nesse projeto, estaremos utilizando o diretório `aluraframe/client/js/app-es6` para escrevermos, realmente, nosso sistema. E, dentro de `aluraframe/client/js/app`, iremos direcionar os códigos que serão gerados pelo nosso *transpiler*.
 		- Note que as inclusões de *scripts* (`index.html`) continuam apontando para o diretório **`app`**.
+
+### Atividade 02 - Babel, instalação e build-step
+- Para realizarmos a instalação do [*Babel*](https://babeljs.io/), utilizaremos o [npm](https://www.npmjs.com/) - o gerenciador de pacotes do [Node.js](https://nodejs.org/en/).
+	- E, sempre que vamos trabalhar em algum projeto que vai utilizar **módulos do Node.js**, o primeiro passo que devemos executar é rodar o comando: `npm init`
+		- Esse comando irá criar um arquivo chamado `package.json`. Esse arquivo funciona como uma "anotação" de todos os módulos do Node.js que serão utilizados no projeto.
+	- Agora vamos instalar o *Babel*: `npm install babel-cli@6.10.1 --save-dev`
+		- Nesse caso, eu passei a versão exatamente igual à utilizada no curso, mas já existem versões mais novas desse compilador.
+	- Para que o *Babel* possa "entender" a sintaxe do **ES6** e converter para o **ES5**, precisamos instalar mais um módulo, que é o *preset*: `npm install babel-preset-es2015@6.9.0 --save-dev`
+	- Por fim, além de instalar os dois módulos, é hora de fazer a "*ligação de um com o outro*"
+		- Para isso, vamos criar o arquivo `.babelrc`, que é um **arquivo de configuração do *Babel***, lido toda vez que o *Babel* é executado
