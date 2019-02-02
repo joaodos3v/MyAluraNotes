@@ -30,4 +30,11 @@ class Negociacao {
 	}
 
 
+	// Simulando o comportamento de 'Encapsulamento' do paradigma OO, pois ninguém do que a classe Negociação para saber se uma negociação é igual à outra.
+	// Com isso, podemos reaproveitar esse trecho de código em qualquer lugar, tornando nosso código mais limpo e, principalmente, encapsulado!
+	isEquals(outraNegociacao) {        
+        return JSON.stringify(this) == JSON.stringify(outraNegociacao)
+    }
+
+
 }
