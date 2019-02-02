@@ -227,3 +227,24 @@
 - *Promise aninhada* **vs.** *Promise.all()*
 	- `Promise.all` resolve as promises **em paralelo**, ou seja, uma promise **não aguarda a outra terminar** para ser executada. `Promise.all` é interessante quando uma promise não depende do resultado da promise anterior. 
 	- Nos casos onde há dependência, o encadeamento de promises é o caminho mais indicado.
+
+
+
+
+
+
+
+
+
+
+## Aula 05 - Simplificando requisições Ajax com a Fetch API
+
+### Atividade 01 - xmlHttpRequest: será que existe algo de mais alto nível?
+- Para facilitar ainda mais a vida dos desenvolvedores - já que ela é tão complicada .-. -, no *ES2016* foi disponibilizada uma *API* que simplifica a chamada de requisições *Ajax*: a [Fetch API](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API).
+	- Veja [aqui](https://braziljs.org/blog/fetch-api-e-o-javascript/) um blog escrito pelo [Felipe N. Moura](https://braziljs.org/blog/author/felipe-n-moura/) - um dos mitos fundadores do [BrazilJS](https://braziljs.org/) - sobre o assunto.
+	- Para usar esse recurso, existe no *escopo global* a chamada para `fetch(urlAqui)`, que trabalha no padrão `Promise`.
+		- Vale lembrar aqui que a resposta desse método é **bruta** (não é um *json*, não é um texto, não é um *number*). Em virtude disso, a própria resposta possui métodos disponíveis para converter esse retorno no formato desejado. Tudo isso é possível porque essa resposta é um objeto [*Response*](https://developer.mozilla.org/pt-BR/docs/Web/API/Response) (veja a documentação para encontrar os métodos e propriedades disponíveis para esse objeto).
+	- Uma das poucas **desvantagens** desse recurso é que, em razão do tratamento de *status* ter sido abstraído pelo *API* e não ser mais uma responsabilidade do desenvolvedor, **não podemos mais cancelar uma requisição *AJAX* durante sua execução**.
+	- Para **tratar um erro** com a *Fetch API* é muito simples. O objeto *Response*, como citado anteriormente, possui vários atributos e, para nossa sorte, um deles é o `ok`. Esse atributo sempre terá como valor `true` ou `false`.
+		- Se o *status* da resposta recebida do *backend* vai de **200 até 299**, essa requisição teve um retorno correto e o valor de `ok` será `true`. Caso contrário, o valor será `false`.
+			- Para capturar a mensagem do erro, caso ele ocorra, use *retorno.`statusText`*.
