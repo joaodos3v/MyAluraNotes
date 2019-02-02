@@ -218,3 +218,7 @@
 ### Atividade 04 - Importando negociações automaticamente
 - **`BOA PRÁTICA`:** no `constructor` deve-se definir apenas os **atributos** da sua classe. Não é interessante que lógica, regras de negócios ou validações estejam escritas nesta etapa do código.
 	- Caso precise executar algumas tarefas logo no início da aplicação, crie um método *privado* `_init()`, por exemplo, e chame-o no fim do `constructor`.
+
+### Atividade 08 - Comparação entre objetos
+- Existem tipos primitivos em JavaScript chamado de literais que podem ser acessados como objetos quanto invocamos algum método. O encapsulamento de um primitivo por um objeto automaticamente pelo interpretador é chamado de `autoboxing`.
+	- Por mais que tenhamos um objeto representando um número, a comparação será pelo valor literal (primitivo) e não pela referência. Números são encapsulados pela função construtora `Number`.
