@@ -222,3 +222,8 @@
 ### Atividade 08 - Comparação entre objetos
 - Existem tipos primitivos em JavaScript chamado de literais que podem ser acessados como objetos quanto invocamos algum método. O encapsulamento de um primitivo por um objeto automaticamente pelo interpretador é chamado de `autoboxing`.
 	- Por mais que tenhamos um objeto representando um número, a comparação será pelo valor literal (primitivo) e não pela referência. Números são encapsulados pela função construtora `Number`.
+
+### Atividade 11 - Experimento com promise
+- *Promise aninhada* **vs.** *Promise.all()*
+	- `Promise.all` resolve as promises **em paralelo**, ou seja, uma promise **não aguarda a outra terminar** para ser executada. `Promise.all` é interessante quando uma promise não depende do resultado da promise anterior. 
+	- Nos casos onde há dependência, o encadeamento de promises é o caminho mais indicado.
