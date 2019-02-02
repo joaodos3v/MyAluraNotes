@@ -259,3 +259,22 @@
 	})
 	// tratamento do retorno aqui
 	```
+
+
+
+
+
+
+
+
+
+
+## Aula 06 - Tornando nosso código ainda mais compatível usando Babel
+
+### Atividade 01 - O fantasma da incompatibilidade
+- Para que não seja necessário abrir mão de escrever um código mais elegante, sucinto e legível, aproveitando as atualizações benéficas da linguagem *JavaScript*, podemos utilizar algumas ferramentas que revolucionaram o quesito **compatibilidade** quando o assunto é *JavaScript*.
+	- Em suma, continuaremos desenvolvendo utilizando o que há de mais novo na linguagem;
+	- Toda vez que o projeto/código for "para o ar", para a produção, essas ferramentas irão compilar o nosso código para uma versão mais antiga da linguagem, quase que como um *downgrade*;
+	- Esse processo se chama `transcompilação` e, para que ele seja possível, é necessário utilizarmos um `transpiler`.
+		- Nesse projeto, estaremos utilizando o diretório `aluraframe/client/js/app-es6` para escrevermos, realmente, nosso sistema. E, dentro de `aluraframe/client/js/app`, iremos direcionar os códigos que serão gerados pelo nosso *transpiler*.
+		- Note que as inclusões de *scripts* (`index.html`) continuam apontando para o diretório **`app`**.
