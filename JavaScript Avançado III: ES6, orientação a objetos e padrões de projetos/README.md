@@ -301,3 +301,14 @@
 	- Eu acho muito interessante sempre adicionar o parâmetro `--source-maps`
 		- Esse parâmetro trata-se de um arquivo que liga o arquivo resultante da compilação com o seu original para efeito de depuração, ou seja, para uso do *debugger*. Em resumo, ele permitirá que quando erros acontecerem, o *debugger* aponte o arquivo escrito em **es6**, não o transcompilado em **es5**
 		- Comando final: ` ./node_modules/.bin/babel js/app-es6 -d js/app --source-maps`
+	- Após realizar os comandos acima, eu tive **problemas com a aplicação**, pois ela apresentou diversos erros decorrentes da utilização do *Babel*
+		- Para resolvê-los, encontrei essa discussão no próprio fórum da Alura: [Erro no fetch.js](https://cursos.alura.com.br/forum/topico-erro-no-fetch-js-63066)
+		- Caso não tenha acesso, em resumo, adicione essa linha no HTML: `<script> var exports = {}; </script>`
+			- Ela tem que ser posta na frente de todos os outros scripts que foram importados.
+
+### Atividade 04 - Compilando arquivos em tempo real
+- Outro recurso muito utilizado do *Babel* é a atualização do pacote de arquivos transcompilados em **tempo real**. Para fazer isso através de um *script* `npm`, podemos duplicar a linha do `build` anterior, adicionando o parâmetro `--watch`.
+	- A chave padrão para esse comando é `watch` também
+	- **Nova linha:** `"watch": "babel js/app-es6 -d js/app --source-maps --watch"`
+		- **Para executar:** `npm run watch`
+	- Após executar esse script, não será mais necessário rodar o comando de `build` toda vez que alterarmos algum arquivo
