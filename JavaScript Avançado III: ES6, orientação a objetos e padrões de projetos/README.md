@@ -312,3 +312,9 @@
 	- **Nova linha:** `"watch": "babel js/app-es6 -d js/app --source-maps --watch"`
 		- **Para executar:** `npm run watch`
 	- Após executar esse script, não será mais necessário rodar o comando de `build` toda vez que alterarmos algum arquivo
+
+### Atividade 11 - Para saber mais: há limite para os transcompiladores?
+- Vale ressaltar aqui, apenas a título de informação, que **nem todos os problemas são resolvidos através dos *transpilers***!
+	- Por exemplo, se usarmos `promises`, o código transcompilado continuará a não funcionar caso o navegador não suporte esse recurso. 
+	- Isso também ocorre com a `Fetch API` que vimos. 
+	- Nesses casos, é comum misturar o processo de transcompilação com o uso de um ou outro `polyfill` para tapar aquelas lacunas que o *transpiler* não consegue.
