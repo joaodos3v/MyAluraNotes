@@ -288,3 +288,16 @@
 	- Para que o *Babel* possa "entender" a sintaxe do **ES6** e converter para o **ES5**, precisamos instalar mais um módulo, que é o *preset*: `npm install babel-preset-es2015@6.9.0 --save-dev`
 	- Por fim, além de instalar os dois módulos, é hora de fazer a "*ligação de um com o outro*"
 		- Para isso, vamos criar o arquivo `.babelrc`, que é um **arquivo de configuração do *Babel***, lido toda vez que o *Babel* é executado
+
+### Atividade 03 - Executando o Babel
+- Uma forma de executar o *Babel* na nossa aplicação é:
+	- Abrir o arquivo `package.json`
+	- Dentro da key `scripts`, adicionar uma vírgula `,` e uma nova chave (nesse caso, usaremos a chave `build`)
+	- Ex: `"build": "babel js/app-es6 -d js/app"`
+		- Esse comando diz, basicamente: "*execute o comando `babel` na pasta `js/app-es6` e o resultado dessa execução deve ser colocado no **destino** `js/app`*"
+	- Agora já podemos rodar nosso "*script*" com o `npm`: `npm run build`
+		- Note que **build** é o nome do *script* inserido dentro do `packege.json`
+	- Se algum **erro** ocorrer, execute o comando manualmente para obter o mesmo resultado: ` ./node_modules/.bin/babel js/app-es6 -d js/app`
+	- Eu acho muito interessante sempre adicionar o parâmetro `--source-maps`
+		- Esse parâmetro trata-se de um arquivo que liga o arquivo resultante da compilação com o seu original para efeito de depuração, ou seja, para uso do *debugger*. Em resumo, ele permitirá que quando erros acontecerem, o *debugger* aponte o arquivo escrito em **es6**, não o transcompilado em **es5**
+		- Comando final: ` ./node_modules/.bin/babel js/app-es6 -d js/app --source-maps`
