@@ -318,3 +318,19 @@
 	- Por exemplo, se usarmos `promises`, o código transcompilado continuará a não funcionar caso o navegador não suporte esse recurso. 
 	- Isso também ocorre com a `Fetch API` que vimos. 
 	- Nesses casos, é comum misturar o processo de transcompilação com o uso de um ou outro `polyfill` para tapar aquelas lacunas que o *transpiler* não consegue.
+
+
+
+
+
+
+
+
+
+
+## Aula 07 - Trabalhando com módulos do ES2015!
+
+### Atividade 01 - Escopo global e carregamento de scripts = dor de cabeça
+- Podemos dizer que o "calcanhar de Aquiles" do *JavaScript* são: o **escopo global** e o **carregamento de *scripts***! Se você já trabalhou com a linguagem, com certeza importou um *script* antes do que deveria ou acabou redeclarando uma variável ou função em um arquivo que você teve que realizar manutenção...
+	- Para solucionar esse problema e enraizar de vez essa linguagem como uma linguagem completa e útil, vamos utilizar a **modularização (sistema de módulos)** do `ES2015`! Esse recurso vai nos auxiliar a resolver esses dois problemas.
+
