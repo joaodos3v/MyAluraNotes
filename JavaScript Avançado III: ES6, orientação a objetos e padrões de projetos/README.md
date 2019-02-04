@@ -300,7 +300,7 @@
 	- Se algum **erro** ocorrer, execute o comando manualmente para obter o mesmo resultado: ` ./node_modules/.bin/babel js/app-es6 -d js/app`
 	- Eu acho muito interessante sempre adicionar o parâmetro `--source-maps`
 		- Esse parâmetro trata-se de um arquivo que liga o arquivo resultante da compilação com o seu original para efeito de depuração, ou seja, para uso do *debugger*. Em resumo, ele permitirá que quando erros acontecerem, o *debugger* aponte o arquivo escrito em **es6**, não o transcompilado em **es5**
-		- Comando final: ` ./node_modules/.bin/babel js/app-es6 -d js/app --source-maps`
+		- Comando final: `./node_modules/.bin/babel js/app-es6 -d js/app --source-maps`
 	- Após realizar os comandos acima, eu tive **problemas com a aplicação**, pois ela apresentou diversos erros decorrentes da utilização do *Babel*
 		- Para resolvê-los, encontrei essa discussão no próprio fórum da Alura: [Erro no fetch.js](https://cursos.alura.com.br/forum/topico-erro-no-fetch-js-63066)
 		- Caso não tenha acesso, em resumo, adicione essa linha no HTML: `<script> var exports = {}; </script>`
@@ -333,4 +333,15 @@
 ### Atividade 01 - Escopo global e carregamento de scripts = dor de cabeça
 - Podemos dizer que o "calcanhar de Aquiles" do *JavaScript* são: o **escopo global** e o **carregamento de *scripts***! Se você já trabalhou com a linguagem, com certeza importou um *script* antes do que deveria ou acabou redeclarando uma variável ou função em um arquivo que você teve que realizar manutenção...
 	- Para solucionar esse problema e enraizar de vez essa linguagem como uma linguagem completa e útil, vamos utilizar a **modularização (sistema de módulos)** do `ES2015`! Esse recurso vai nos auxiliar a resolver esses dois problemas.
+
+### Atividade 02 - ES2015 e módulos
+- Por padrão, considera-se no *ES2015* que `cada script é um módulo`.
+	- Isso quer dizer que tudo que estiver dentro desse arquivo não vai ser acessível naturalmente para lugar nenhum - *não vai estar no escopo global*.
+- Com esse conceito, cada vez que um módulo - *um script* - quiser utilizar outro módulo, seja para fazer um `extends`, utilizar um *Helper* ou *instanciar* um objeto, devemos **explicitamente** dizer que queremos importar esse módulo.
+	- Podemos fazer isso através da palavra reservada `import`, aliada de uma *chave* (`{}`) que conterá os valores (classes, *libs*...) que serão importados, juntamente com a palavra `from` e o caminho do módulo que deve ser importado.
+	- **Ex.:** `import {View} from './View';`
+		- Note que o arquivo *View* está na mesma pasta do módulo que está importando-o. Em virtude disso, utilizamos `./` na frente do nome do módulo, que **não necessita levar extensão**.
+- No entanto, para que essa importação seja possível, o módulo que será importado deve "dizer", **explicitamente**, que ele "permite" ser importado.
+	- Podemos fazer isso através da palavra reservada `export` colocada antes do nome da classe, por exemplo.
+	- **Ex.:** `export class View {  ... }`
 
