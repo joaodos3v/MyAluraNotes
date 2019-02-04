@@ -1,3 +1,12 @@
+import {ListaNegociacoes} from '../models/ListaNegociacoes';
+import {Mensagem} from '../models/Mensagem';
+import {NegociacoesView} from '../view/NegociacoesView';
+import {MensagemView} from '../view/MensagemView';
+import {NegociacaoService} from '../services/NegociacaoService';
+import {DateHelper} from '../helpers/DateHelper';
+import {Bind} from '../helpers/Bind';
+import {Negociacao} from '../models/Negociacao';
+
 class NegociacaoController {
 
 	constructor() {

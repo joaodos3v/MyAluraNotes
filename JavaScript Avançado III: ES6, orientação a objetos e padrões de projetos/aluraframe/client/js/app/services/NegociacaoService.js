@@ -9,6 +9,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _HttpService = require('./HttpService');
 
+var _ConnectionFactory = require('./ConnectionFactory');
+
+var _NegociacaoDAO = require('../dao/NegociacaoDAO');
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var NegociacaoService = exports.NegociacaoService = function () {
@@ -76,8 +80,8 @@ var NegociacaoService = exports.NegociacaoService = function () {
 		key: 'cadastra',
 		value: function cadastra(negociacao) {
 
-			return ConnectionFactory.getConnection().then(function (connection) {
-				return new NegociacaoDAO(connection);
+			return _ConnectionFactory.ConnectionFactory.getConnection().then(function (connection) {
+				return new _NegociacaoDAO.NegociacaoDAO(connection);
 			}).then(function (dao) {
 				return dao.adiciona(negociacao);
 			}).then(function () {
@@ -91,8 +95,8 @@ var NegociacaoService = exports.NegociacaoService = function () {
 		key: 'lista',
 		value: function lista() {
 
-			return ConnectionFactory.getConnection().then(function (connection) {
-				return new NegociacaoDAO(connection);
+			return _ConnectionFactory.ConnectionFactory.getConnection().then(function (connection) {
+				return new _NegociacaoDAO.NegociacaoDAO(connection);
 			}).then(function (dao) {
 				return dao.listaTodos();
 			}).catch(function (erro) {
@@ -104,8 +108,8 @@ var NegociacaoService = exports.NegociacaoService = function () {
 		key: 'apaga',
 		value: function apaga() {
 
-			return ConnectionFactory.getConnection().then(function (connection) {
-				return new NegociacaoDAO(connection);
+			return _ConnectionFactory.ConnectionFactory.getConnection().then(function (connection) {
+				return new _NegociacaoDAO.NegociacaoDAO(connection);
 			}).then(function (dao) {
 				return dao.apagaTodos();
 			}).then(function () {

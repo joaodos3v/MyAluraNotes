@@ -1,4 +1,6 @@
-class Bind {
+import {ProxyFactory} from '../services/ProxyFactory';
+
+export class Bind {
 
 	constructor(model, view, ...props) {
 

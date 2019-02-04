@@ -1,4 +1,4 @@
-class Mensagem {
+export class Mensagem {
 
     // DEIXOU DE RECEBER O PARÂMETRO OPCIONAL (antes era texto='')
 	constructor(texto) {

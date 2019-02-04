@@ -345,3 +345,5 @@
 	- Podemos fazer isso através da palavra reservada `export` colocada antes do nome da classe, por exemplo.
 	- **Ex.:** `export class View {  ... }`
 
+### Atividade 03 - Refatorando nosso código com import e export
+- 
