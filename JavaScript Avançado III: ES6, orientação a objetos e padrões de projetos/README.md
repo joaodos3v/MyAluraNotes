@@ -345,5 +345,12 @@
 	- Podemos fazer isso através da palavra reservada `export` colocada antes do nome da classe, por exemplo.
 	- **Ex.:** `export class View {  ... }`
 
-### Atividade 03 - Refatorando nosso código com import e export
-- 
+### Atividade 04 - SystemJs
+- Apesar de ter refatorado o nosso sistama para usar `import` e `export`, ele ainda não funciona!! Mas por quê?
+	- O sistema ainda não funciona porque o *ES2015* especifica apenas a utilização de exportações/importações, mas não define **como** elas devem ser importadas. Ou seja, não existe um padrão para importar nossos módulos - uma biblioteca, recurso nativo do *browser*, entre outros... -, cada um faz do seu jeito!
+	- Esse papel que ainda não está padronizado é conhecido como ***loader***, recurso responsável por "magicamente" carregar todos os *scripts* a partir de uma inclusão inicial.
+		- Entenda: nossa inclusão inicial é o arquivo `a.js`. Porém, `a.js` depende de `b.js` , `c.js` e `d.js`. Não somos nós que importaremos os 3 últimos *scripts*, e sim nosso ***loader***!
+- Para esse curso, escolhemos como *loader* a biblioteca [*Systemjs*](https://github.com/systemjs/systemjs).
+- **Observação:** a diferença, ao instalar pacotes com `npm`, entre `--save` e `--save-dev` é sobre o **local** no qual esse pacote será necessário.
+	- Por exemplo: o pacote do `watch`, que transcompila o código automaticamente, sem que o *dev* precise ficar *"rebuildando"* a aplicação... é óbvio que ele só é necessário em **ambiente de desenvolvimento**. Agora o `loader`, que é quem permite a modularização do sistema e faz o *browser* "entender" as importações... está claro que é mais do que essencial no **ambiente de produção**.
+	- Por isso, ao instalar o `loader` usamos **--save** e no `watch` usamos **--save-dev**.
