@@ -8,10 +8,6 @@
 
     <!-- LINHA ADICIONADA PARA SOLUCIONAR PROBLEMAS QUE SURGIRAM APÓS UTILIZAR BABEL -->
     <script> var exports = {}; </script>
-    
-    <!-- carregando nosso polyfill -->
-    <!-- ps: isso é necessário porque ele deve alterar Array antes que ele seja usado pela aplicação.  -->
-    <script src="js/app/polyfill/es6.js"></script>
 </head>
 <body class="container">
     
@@ -19,7 +15,7 @@
 
     <div id="mensagemView"></div>
     
-    <form class="form" onsubmit="negociacaoController.adiciona(event)">
+    <form class="form">
         
         <div class="form-group">
             <label for="data">Data</label>
@@ -41,7 +37,7 @@
     </form>
     
     <div class="text-center">
-        <button onclick="negociacaoController.apaga()" class="btn btn-primary text-center" type="button">
+        <button class="btn btn-primary text-center" type="button">
             Apagar
         </button>
     </div> 
