@@ -356,8 +356,18 @@
 	- Por isso, ao instalar o `loader` usamos **--save** e no `watch` usamos **--save-dev**.
 
 
-### Atividade 05 - Babel e transcompilação de módulos
+### Atividade 06 - Babel e transcompilação de módulos
 - Como, em nosso projeto, estamos utilizando um `transpiler` em conjunto com um `loader`, vamos precisar fazer uma pequena alteração: precisamos que o *Babel* - nosso `transpiler` - faça a transcompilação dos nossos **módulo**, a partir de agora, usando uma sintaxe do *Systemjs* - nosso `loader` (de modo que os dois se tornem compatíveis e interajam entre si).
 	- Para que isso seja feito de maneira correta e automatizada, vamos utilizar mais um módulo do *Node.js*: o [babel-plugin-transform-es2015-modules-systemjs](https://www.npmjs.com/package/babel-plugin-transform-es2015-modules-systemjs).
 	- Execute no seu terminal: `npm install babel-plugin-transform-es2015-modules-systemjs@6.9.0 --save-dev`
 		- **Não podemos esquecer** de "informar" ao *Babel* que ele precisa carregar o módulo do *Node.js* que acabamos de importar. Para isso, acesse `/aluraframe/client/.babelrc` e adicione a linha `"plugins" : ["transform-es2015-modules-systemjs"]`.
+
+
+### Atividade 07 - Delegação de eventos
+- **`CURIOSIDADE:`** *singleton* é uma classe que possui apenas uma instância (compartilhada por toda a aplicação).
+	- Nesse projeto, `NegociacaoController` **é** um *singleton*.
+- **`CURIOSIDADE 2:`** o *JavaScript* possui um sistema de eventos denominado `Event Bubbling`.
+	- É um conceito muito interessante para entender como o *JavaScript* trabalha com o **aninhamento** de elementos *HTML*.
+	- Leia mais:
+		- [Aqui](https://javascript.info/bubbling-and-capturing)
+		- [E aqui](https://imasters.com.br/front-end/javascript-bubbling-e-capturing)
