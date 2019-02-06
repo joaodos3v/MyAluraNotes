@@ -354,3 +354,10 @@
 - **Observação:** a diferença, ao instalar pacotes com `npm`, entre `--save` e `--save-dev` é sobre o **local** no qual esse pacote será necessário.
 	- Por exemplo: o pacote do `watch`, que transcompila o código automaticamente, sem que o *dev* precise ficar *"rebuildando"* a aplicação... é óbvio que ele só é necessário em **ambiente de desenvolvimento**. Agora o `loader`, que é quem permite a modularização do sistema e faz o *browser* "entender" as importações... está claro que é mais do que essencial no **ambiente de produção**.
 	- Por isso, ao instalar o `loader` usamos **--save** e no `watch` usamos **--save-dev**.
+
+
+### Atividade 05 - Babel e transcompilação de módulos
+- Como, em nosso projeto, estamos utilizando um `transpiler` em conjunto com um `loader`, vamos precisar fazer uma pequena alteração: precisamos que o *Babel* - nosso `transpiler` - faça a transcompilação dos nossos **módulo**, a partir de agora, usando uma sintaxe do *Systemjs* - nosso `loader` (de modo que os dois se tornem compatíveis e interajam entre si).
+	- Para que isso seja feito de maneira correta e automatizada, vamos utilizar mais um módulo do *Node.js*: o [babel-plugin-transform-es2015-modules-systemjs](https://www.npmjs.com/package/babel-plugin-transform-es2015-modules-systemjs).
+	- Execute no seu terminal: `npm install babel-plugin-transform-es2015-modules-systemjs@6.9.0 --save-dev`
+		- **Não podemos esquecer** de "informar" ao *Babel* que ele precisa carregar o módulo do *Node.js* que acabamos de importar. Para isso, acesse `/aluraframe/client/.babelrc` e adicione a linha `"plugins" : ["transform-es2015-modules-systemjs"]`.

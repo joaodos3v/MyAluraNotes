@@ -1,4 +1,5 @@
 import {View} from './View';
+import {DateHelper} from '../helpers/DateHelper';
 
 export class NegociacoesView extends View {
 
