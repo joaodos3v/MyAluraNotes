@@ -32,4 +32,4 @@ Para qualquer outro commit necessário, utilize:
  :heavy_check_mark: [JavaScript avançado II: ES6, orientação a objetos e padrões de projetos](https://cursos.alura.com.br/course/javascript-es6-orientacao-a-objetos-parte-2)
 
 
- :arrow_forward: [JavaScript avançado III: ES6, orientação a objetos e padrões de projetos](https://cursos.alura.com.br/course/javascript-es6-orientacao-a-objetos-parte-3)
+ :heavy_check_mark: [JavaScript avançado III: ES6, orientação a objetos e padrões de projetos](https://cursos.alura.com.br/course/javascript-es6-orientacao-a-objetos-parte-3)
