@@ -13,7 +13,7 @@ Ao iniciar um curso, crie uma pasta com o nome do curso e, dentro dessa pasta, u
 Então, adicione a pasta ao repositório com a mensagem de commit:  
 > Start 'Nome do curso'
 
-A cada atividade, deve-se seguir o padrão de mensagem de commit abaixo:  
+À cada atividade, deve-se seguir o padrão de mensagem de commit abaixo:  
 > ('Nome do curso') 'Aula': 'Atividade' [ 'Comentário']  
 > **Ex.:** (Java parte 1: Primeiros passos) 01: 01 [ Atividade 01 do curso de Java ]    
 
