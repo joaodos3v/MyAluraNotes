@@ -4,7 +4,7 @@ Repositório criado para armazenar todas as anotações e resumos de aula vistas
 
 Esse repositório foi criado em parceria com [GuiDB](https://github.com/GuiDB) para que uma base de resumos e consultas rápidas sobre os cursos da Alura fosse mantida. Além disso, esse repositório é um complemento ao [repositório original](https://github.com/GuiDB/MyAluraProgress).
 
-PS.: eu não fiz um *fork* do repositório original porque quero que meu gráfico de atividades seja populado. :laughing:
+PS: eu não fiz um *fork* do repositório original porque quero que meu gráfico de atividades seja populado. :laughing:
 
 
 ## Commit (padrão):
