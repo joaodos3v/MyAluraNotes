@@ -2,11 +2,6 @@
 
 Repositório criado para armazenar todas as anotações e resumos de aula vistas na Alura, servindo como uma base de conhecimento / referência para futuras consultas.
 
-Esse repositório foi criado em parceria com [GuiDB](https://github.com/GuiDB) para que uma base de resumos e consultas rápidas sobre os cursos da Alura fosse mantida. Além disso, esse repositório é um complemento ao [repositório original](https://github.com/GuiDB/MyAluraProgress).
-
-PS: eu não fiz um *fork* do repositório original porque quero que meu gráfico de atividades seja populado. :laughing:
-
-
 ## Commit (padrão):
 
 Ao iniciar um curso, crie uma pasta com o nome do curso e, dentro dessa pasta, um arquivo README.md que servirá para anotações.
