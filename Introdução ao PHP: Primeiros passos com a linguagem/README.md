@@ -115,4 +115,16 @@
 - Uma estrutura de repetição interessante que não foi vista durante o curso é o `do while`.
   - [Nesse link da documentação](https://www.php.net/manual/en/control-structures.do.while.php) é possível encontrar uma detalhada explicação sobre sua estrutura, mas vale ressaltar aqui que a principal diferença para o `while` "normal" é que a condicional de execução é verificada no **fim** de cada iteração, ao invés do início.
 
+#### Reumo_5
+
+```plain
+* Existem algumas variações de laços, dentre elas:
+  * while que possui uma condição de entrada
+  * do-while que possui uma condição de permanência (sempre executa o bloco pelo menos uma vez)
+  * for que possui a declaração de uma variável, uma condição entrada e o increment
+* Dentro do bloco do laço podemos pular uma interação com o comando continue
+* Com o comando break podemos sair do laço
+* A variável contador normalmente se chama i
+```
+
 ## Aula 06 - Desafios
