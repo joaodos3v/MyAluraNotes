@@ -91,6 +91,12 @@
     // Esse trecho será executado
 ```
 
+### Atividade 08 - Para saber mais: Ternário
+
+- É importante lembrar que para verificações simples, existe o chamado *operador ternário*.
+  - Ele permite que uma condicional seja executada em uma única linha. Ex.: `$variavel = $condicao ? $valorSeVerdadeiro : $valorSeFalso;`
+- É possível encontrar mais detalhes [nessa página](https://www.php.net/manual/en/language.operators.comparison.php).
+
 ## Aula 05 - Repetindo ações
 
 ## Aula 06 - Desafios
