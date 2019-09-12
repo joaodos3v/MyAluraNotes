@@ -97,6 +97,17 @@
   - Ele permite que uma condicional seja executada em uma única linha. Ex.: `$variavel = $condicao ? $valorSeVerdadeiro : $valorSeFalso;`
 - É possível encontrar mais detalhes [nessa página](https://www.php.net/manual/en/language.operators.comparison.php).
 
+#### Resumo_4
+
+```plain
+* Podemos tomar uma decisão no código através do if, elseif e else
+* if e elseif vão avaliar uma condição, se for verdadeira executam o bloco associado
+* O if é o primeiro comando, elseif e else são opcionais
+* O bloco elseif sempre precisa de um if antes
+* O bloco else sempre precisa de um if ou elseif antes -O bloco else só executa se nenhuma das condições anteriores forem verdadeiras
+* Através do && (AND lógico) e do || (OR lógico) podemos avaliar mais de uma condição
+```
+
 ## Aula 05 - Repetindo ações
 
 ## Aula 06 - Desafios
