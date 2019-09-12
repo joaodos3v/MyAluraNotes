@@ -31,7 +31,7 @@
 - Um site interessante quando se trabalha com valores monetários (em resumo, *float* e *double*) é o: [The Floating-Point Guide](https://floating-point-gui.de/).
   - É um site dedicado a explicar as possíveis situações inusitadas que um programador pode passar ao trabalhar com esse tipo de dado.
 
-#### Resumo
+#### Resumo_2
 
 ```plain
 * Uma variável guarda um valor
@@ -51,6 +51,16 @@
 ```
 
 ## Aula 03 - Trabalhando com texto
+
+### Atividade 04 - Caracteres especiais
+
+- Sempre que for necessário informar um caracter especial no PHP, inicia-se com `\`.
+  - Por exemplo: para quebrar linha (*n*ew line), `\n`.
+  - Aqui pode ser encontrada uma lista dos caracteres especiais disponíveis: [Lista](https://www.php.net/manual/pt_BR/language.types.string.php)
+- No entanto, em virtude de compatibilidade com sistemas operacionais diferentes (no Windows, por exemplo, utiliza-se `\r\n` ao invés de apenas `\n`), o PHP disponibiliza o valor `PHP_EOL` (*end of line*).
+  - Recomenda-se utilizar esse valor.
+- Além disso, ao utilizar apóstrofo (ou aspas simples `'`), o PHP interpretará que todo o conteúdo ali dentro é texto puro e não precisa fazer nada além de exibir.
+  - Por isso, para utilizar caracteres especiais ou mesmo variáveis, dedve-se utilizar aspas duplas `"`.
 
 ## Aula 04 - Tomando decisões
 
