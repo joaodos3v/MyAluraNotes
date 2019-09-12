@@ -76,6 +76,11 @@
 
 ## Aula 04 - Tomando decisões
 
+### Atividade 03 - Para saber mais: Precedência
+
+- Todos operadores lógicos estão sujeitos à regras de precedência.
+  - Você pode encontrar essas regras [aqui](https://www.php.net/manual/en/language.operators.precedence.php).
+
 ## Aula 05 - Repetindo ações
 
 ## Aula 06 - Desafios
