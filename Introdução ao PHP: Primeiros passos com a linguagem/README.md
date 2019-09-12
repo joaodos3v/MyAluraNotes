@@ -62,6 +62,18 @@
 - Além disso, ao utilizar apóstrofo (ou aspas simples `'`), o PHP interpretará que todo o conteúdo ali dentro é texto puro e não precisa fazer nada além de exibir.
   - Por isso, para utilizar caracteres especiais ou mesmo variáveis, dedve-se utilizar aspas duplas `"`.
 
+#### Resumo_3
+
+```plain
+* Para concatenar uma string com uma outra variável usamos o . (ponto)
+* Podemos definir uma string com aspas simples(') ou duplas(")
+* Para interpretar um valor da variável ou caractere especial dentro da string devemos usar aspas duplas
+* Caracteres especias são:
+  * Nova linha: \n ou \r
+  * Tab: \t
+* PHP possui uma constante para indicar uma quebra de linha: PHP_EOL
+```
+
 ## Aula 04 - Tomando decisões
 
 ## Aula 05 - Repetindo ações
