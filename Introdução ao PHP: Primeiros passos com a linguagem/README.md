@@ -81,6 +81,16 @@
 - Todos operadores lógicos estão sujeitos à regras de precedência.
   - Você pode encontrar essas regras [aqui](https://www.php.net/manual/en/language.operators.precedence.php).
 
+### Atividade 07 - Apenas uma linha
+
+- Se a estrutura de decisão possuir **apenas uma linha**, você pode escrever toda a condicional **sem** chaves (`{}`).
+  - Ex.:
+
+```php
+  if(true)
+    // Esse trecho será executado
+```
+
 ## Aula 05 - Repetindo ações
 
 ## Aula 06 - Desafios
