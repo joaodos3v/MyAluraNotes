@@ -26,6 +26,11 @@
 
 ## Aula 02 - Variáveis e tipos
 
+### Atividade 08 - Para saber mais: Dinheiro
+
+- Um site interessante quando se trabalha com valores monetários (em resumo, *float* e *double*) é o: [The Floating-Point Guide](https://floating-point-gui.de/).
+  - É um site dedicado a explicar as possíveis situações inusitadas que um programador pode passar ao trabalhar com esse tipo de dado.
+
 ## Aula 03 - Trabalhando com texto
 
 ## Aula 04 - Tomando decisões
