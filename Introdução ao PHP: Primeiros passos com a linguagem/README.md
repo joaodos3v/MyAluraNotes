@@ -110,4 +110,9 @@
 
 ## Aula 05 - Repetindo ações
 
+### Atividade 05 - Diferentes loops
+
+- Uma estrutura de repetição interessante que não foi vista durante o curso é o `do while`.
+  - [Nesse link da documentação](https://www.php.net/manual/en/control-structures.do.while.php) é possível encontrar uma detalhada explicação sobre sua estrutura, mas vale ressaltar aqui que a principal diferença para o `while` "normal" é que a condicional de execução é verificada no **fim** de cada iteração, ao invés do início.
+
 ## Aula 06 - Desafios
