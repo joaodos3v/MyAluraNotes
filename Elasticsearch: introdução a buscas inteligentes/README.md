@@ -66,3 +66,14 @@ node.name: "myNode1"
 - Habilite e inicie:
   - `sudo systemctl enable kibana`
   - `sudo systemctl start kibana`
+
+### Atividade 03 - Como Funciona o Elasticsearch
+
+- Após iniciar o serviço, o Elasticsearch usará as seguintes portas:
+  - **9200**: fornece o web service REST
+  - **9300**: comunicação entre os nós (nodes)
+- Acesso ao Elasticsearch (comparado a um banco relacional):
+  - *POST* x insert
+  - *GET* x select
+  - *PUT* x update ou insert (s/ duplicar)
+  - *DELETE* x delete
