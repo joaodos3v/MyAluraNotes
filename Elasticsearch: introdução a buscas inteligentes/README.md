@@ -19,3 +19,50 @@
   - Porém, não necessariamente precisa se utilizar Java para usar o Elasticsearch. 
     - Enquanto que em um banco de dados relacional, geralmente utiliza-se a linguagem SQL, no Elasticsearch utiliza-se **comandos HTTP REST**.
 - Alguns dos conceitos do Elasticsearch: [Índices](https://www.elastic.co/pt/blog/what-is-an-elasticsearch-index), [Tipos](https://logz.io/blog/elasticsearch-mapping/), [Shards](https://forum.casadocodigo.com.br/t/elasticsearch-o-que-sao-shards/173) e [Réplicas](https://codingexplained.com/coding/elasticsearch/understanding-replication-in-elasticsearch).
+
+## Atividade 02 - Preparando o ambiente
+
+- **Ferramentas que serão utilizadas no curso:** [Elasticsearch](https://www.elastic.co/pt/), [Kibana](https://www.elastic.co/pt/kibana) e [cURL](https://curl.haxx.se/).
+- Instalações no Ubuntu:
+  - **Referências:** [Referência](https://tecadmin.net/setup-elasticsearch-on-ubuntu/) - [Referência 2](https://www.digitalocean.com/community/tutorials/como-instalar-elasticsearch-logstash-e-kibana-elastic-stack-no-ubuntu-18-04-pt) - [Referência 3](https://linuxize.com/post/how-to-install-elasticsearch-on-ubuntu-18-04/)
+
+> Elasticsearch 
+
+- Confirme que os comandos a seguir retornam resultados (ou instale as ferramentas):
+  - `java -version`
+  - `echo $JAVA_HOME`
+- Instalando:
+  - `sudo apt-get install apt-transport-https`
+  - `wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -`
+- Agora configure o repositório apt do seu sistema:
+  - `sudo add-apt-repository "deb https://artifacts.elastic.co/packages/7.x/apt stable main"`
+- Finalize:
+  - `sudo apt-get update`
+  - `sudo apt-get install elasticsearch`
+- Customize seu Elasticsearch depois de instalado (opcional):
+  - `sudo nano /etc/elasticsearch/elasticsearch.yml`
+  - Altere estes valores:
+
+```plain
+network.host: localhost
+cluster.name: myCluster1
+node.name: "myNode1"
+```
+
+- Para iniciar o Elasticsearch, existem duas opções:
+  - Configurá-lo para iniciar assim que o sistema iniciar:
+    - `sudo /bin/systemctl enable elasticsearch.service`
+  - Ou rodar estes comandos:
+    - `sudo systemctl start elasticsearch.service`
+    - `sudo systemctl stop elasticsearch.service`
+- Teste se tudo ficou ok:
+  - `curl -X GET "http://localhost:9200/?pretty"`
+
+
+> Kibana
+
+- Instale:
+  - `sudo apt install kibana`
+- Habilite e inicie:
+  - `sudo systemctl enable kibana`
+  - `sudo systemctl start kibana`

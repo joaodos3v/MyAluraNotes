@@ -1,0 +1,152 @@
+#*****************************************
+# AULA 9
+#*****************************************
+
+GET pessoas/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+GET pessoas/_search
+{
+  "query": {
+    "exists": {
+      "field": "cep"
+    }
+  }
+}
+
+
+GET pessoas/_search
+{
+  "query": {
+    "term": {
+      "estado": {
+        "value": "BA"
+      }
+    }
+  }
+}
+
+GET pessoas/_search
+{
+  "_source": ["nome", "cidade", "formação"], 
+  "query": {
+    "term": { "estado": "BA" }
+  }
+}
+
+GET pessoas/_search
+{
+  "_source": ["nome", "cidade", "formação"], 
+  "query": {
+    "bool": {
+      "must": [
+        {"term": { "estado": "BA" }}
+      ],
+      "should": [
+        {"term": { "formação.original": "Física" }}
+      ]
+    }
+  }
+}
+
+
+GET pessoas/_search
+{
+  "_source": ["nome", "cidade", "formação"], 
+  "query": {
+    "bool": {
+      "must": [
+        {"term": { "estado": "BA" }}
+      ],
+      "must_not": [
+        {"term": { "formação.original": "Física" }}
+      ]
+    }
+  }
+}
+
+GET pessoas/_search
+{
+  "_source": ["nome", "cidade", "formação"], 
+  "query": {
+    "bool": {
+      "must": [
+        {"term": { "estado": "BA" }}
+      ],
+      "must_not": [
+        {"term": { "formação.original": "Física" }}
+      ],
+      "filter": {
+        "range": {
+          "nome.original": {
+            "gte": "A",
+            "lte": "Czzzzzz"
+          }
+        }
+      }
+    }
+  }
+}
+
+GET pessoas/_search
+{
+  "_source": ["nome", "cidade", "formação"], 
+  "query": {
+    "bool": {
+      "must": [
+        {"term": { "estado": "BA" }},
+        {"match": {"formação": "fisica" }}
+      ]
+    }
+  }
+}
+
+
+GET pessoas/_search
+{
+  "_source": ["nome", "cidade", "formação"], 
+  "query": {
+    "bool": {
+      "must": [
+        {"term": { "estado": "BA" }},
+        {"match": {"formação": "fisica" }}
+      ]
+    }
+  },
+  "sort": [
+    {
+      "cidade.original": {
+        "order": "asc"
+      },
+      "nome.original": {
+        "order": "desc"
+      }
+    }
+  ]
+}
+
+GET pessoas/_search
+{
+  "query": {
+    "match": {
+      "formação": "fisica"
+    }
+  },
+  "aggs": {
+    "pessoas formadas em física por estado": {
+      "terms": {
+        "field": "estado"
+      }
+    }
+  }
+}
+
+
+
+
+
+
