@@ -67,7 +67,7 @@ node.name: "myNode1"
   - `sudo systemctl enable kibana`
   - `sudo systemctl start kibana`
 
-### Atividade 03 - Como Funciona o Elasticsearch
+### Atividade 04 - Como Funciona o Elasticsearch
 
 - Após iniciar o serviço, o Elasticsearch usará as seguintes portas:
   - **9200**: fornece o web service REST
@@ -77,3 +77,8 @@ node.name: "myNode1"
   - *GET* x select
   - *PUT* x update ou insert (s/ duplicar)
   - *DELETE* x delete
+
+### Atividade 06 -  O Comando HTTP Post
+
+- A partir de agora, já é possível utilizar o console do Kibana para executar comandos no Elasticsearch.
+  - Para isso, basta acessar o menu *Dev Tools*.
