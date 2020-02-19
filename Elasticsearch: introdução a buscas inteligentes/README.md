@@ -82,3 +82,54 @@ node.name: "myNode1"
 
 - A partir de agora, já é possível utilizar o console do Kibana para executar comandos no Elasticsearch.
   - Para isso, basta acessar o menu *Dev Tools*.
+
+### Inserindo dados no Elastic
+
+- Obs: no contexto do ElasticSearch, `índice` significa **banco de dados**.
+  - E os **"registros"** são chamados de `documentos`.
+- A sintaxe dos POST consiste no seguinte:
+
+```json
+POST [índice]/_doc
+{JSON_COM_DOCUMENTO}
+
+-- Nesse curso:
+POST catalogo/_doc
+{
+  "nome": "João Silva",
+  "interesses": ["futebol", "música", "literatura"],
+  "cidade": "São Paulo",
+  "formação": "Letras",
+  "estado": "SP",
+  "país": "Brasil",
+}
+```
+
+### Atividade 07 - Inserindo Documentos com ID Explícito
+
+#### Sintaxe do GET
+
+```json
+GET [índice]/_count
+
+-- Nesse curso:
+GET catalogo/_count
+```
+
+#### Criando um documento com o ID explícito
+
+```json
+POST [índice]/_doc/{id}
+{JSON_COM_DOCUMENTO}
+
+-- Nesse curso:
+POST catalogo/_doc/1
+{
+    "nome": "João Silva",
+    "interesses": ["futebol", "música", "literatura"],
+    "cidade": "São Paulo",
+    "formação": "Letras",
+    "estado": "SP",
+    "país": "Brasil"
+}
+```
