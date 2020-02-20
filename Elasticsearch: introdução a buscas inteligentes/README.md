@@ -189,3 +189,19 @@ GET catalogo/_search/?q=futebol
 - O comando `GET` sempre retorna a última versão do documento.
   - Inclusive, isso significa que o Elastic armazena seus documentos de forma imutável (estamos sempre substituindo o documento atual por um outro documento - versionamento).
 - Já o comando `POST`, nesse caso, acaba sendo um pouco diferente que normalmente é utilizado. Nesse caso, ele é útil para **atualizar** os documentos (ou apenas um *attribute* dele).
+
+### Atividade 03 - Shards
+
+> Os "pedaços" do índice.
+
+- **Shards** nada mais são do que as partições de um banco de dados. São pedaços do índice original que, por serem "independentes", permitem que um índice seja dividido em várias máquinas e limitações físicas sejam superadas.
+  - Inclusive, esse é um dos pontos (se não o mais) principais do Elastic, tendo em vista que o *Apache Lucene* não suporta esse particionamento.
+- Cada *shard* pode ser copiado, replicado ou feito backup. Daí as características do Elastic de ser confiável e escalável.
+- Existem dois tipos de *shard*:
+  - *Primária*: onde as escritas são realizadas.
+  - *Secundárias (ou réplicas*: recebem as atualizações, conforme as primárias vão sendo moficadas.
+
+> No Kibana, abrir o menu **Stack Monitoring**.
+
+- Além do *Overview*, nos menus *Nodes* e *Indices*, é possível visualizar a sua "base de dados".
+  - Uma dica é que uma shard **nunca** tenha 50GB ou mais.
