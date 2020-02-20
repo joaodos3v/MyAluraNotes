@@ -172,7 +172,7 @@ GET catalogo/_search/?q=futebol
 |       Tupla      |    Document   |
 |      Coluna      |   Attribute   |
 
-- O HTTP HEAD
+- O HTTP `HEAD`
   - Retorna apenas cabeçalhos HTTP
   - Não retorna o documento
   - Serve para saber se existe o documento
@@ -183,3 +183,9 @@ GET catalogo/_search/?q=futebol
   - `select 1 from pessoas where id = N`
 - No Elastic é:
   - `HEAD catalogo/_doc/1`
+
+### Atividade 02 - O Comando HTTP POST
+
+- O comando `GET` sempre retorna a última versão do documento.
+  - Inclusive, isso significa que o Elastic armazena seus documentos de forma imutável (estamos sempre substituindo o documento atual por um outro documento - versionamento).
+- Já o comando `POST`, nesse caso, acaba sendo um pouco diferente que normalmente é utilizado. Nesse caso, ele é útil para **atualizar** os documentos (ou apenas um *attribute* dele).
