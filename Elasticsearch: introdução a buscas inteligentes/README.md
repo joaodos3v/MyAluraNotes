@@ -205,3 +205,11 @@ GET catalogo/_search/?q=futebol
 
 - Além do *Overview*, nos menus *Nodes* e *Indices*, é possível visualizar a sua "base de dados".
   - Uma dica é que uma shard **nunca** tenha 50GB ou mais.
+
+### Atividade 07 - Resumo
+
+- Nessa aula, aprendemos:
+  - O que é um índice, tipo e documento.
+  - Como utilizar a API Rest para operações de criação, atualização, remoção e verificação de existência de documentos no ElasticSearch.
+  - A analogia entre ElasticSearch e um banco de dados relacionais.
+  - O que são shards, réplicas e qual a sua importância.
