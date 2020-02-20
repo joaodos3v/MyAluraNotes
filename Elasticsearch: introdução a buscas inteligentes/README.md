@@ -261,3 +261,21 @@ GET catalogo/_search/?q=futebol
   - Que podemos especificar o campo na busca usando `campo:termo`.
   - ElasticSearch retorna 10 resultados por padrão.
   - A entender as estatísticas que são parte da resposta de requisições de busca, como tempo de resposta e hits.
+
+## Aula 04 - Mapeamento de Tipos
+
+### Atividade 01 - Mapeamento
+
+- O Elasticsearch define **automaticamente** o índice a partir do documento!
+- Para obter o *mapeamento* dos atributos e índices do Elasticsearch, basta utilizar a função `_mapping`.
+  - Ex.: `GET catalogo/_mapping`
+- O Elasticsearch divide os dados em duas categorias:
+  - *Os tipos de dados "core":*
+    - strings
+    - números
+    - e datas
+  - *Os tipos "complexos":*
+    - arrays
+    - IPv4
+    - IPv6
+    - informação geoespacial
