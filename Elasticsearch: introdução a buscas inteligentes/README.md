@@ -328,3 +328,8 @@ GET catalogo/_analyze
   "text": "Eu nasci há 10 mil (sim, isso mesmo, 10 mil) anos atrás"
 }
 ```
+
+### Atividade 04 - Encontrando quem é nascido no Brasil e gosta de música
+
+- Por padrão, o Elasticsearch é buscar no documento um termo **ou** (*OR*) outro. Para buscar documentos que contenham obrigatoriamente dois termos, é preciso utilizar o **e** (*AND*).
+  - Atenção para a caixa alta, se for em caixa baixa, o Elasticsearch interpretará como mais um termo a ser buscado.
