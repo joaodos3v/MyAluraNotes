@@ -228,3 +228,15 @@ GET catalogo/_search/?q=futebol
 - Para fazer uma busca específica, a estrutura do comando `GET` muda um pouco:
   - `GET <documento>/_search/?q=atributo:valor`
   - Ex: `GET catalogo/_search/?q=estado:SP`
+
+### Atividade 02 - O Cabeçalho da Busca
+
+> Interpretando o cabeçalho de resposta
+
+- `took`: tempo (em *ms*) que a busca demorou pra executar
+  - Útil para identificar gargalos ou buscas que estão demorando mais do que o esperado
+- `timed_out`: excedeu (ou não) o tempo de resposta
+- `shards`: indica quantos fragmentos do Elastic foram afetados pela busca
+- `hits`: é o resultado, propriamente dito
+  - `total`: indica a quantia de resultados retornados
+  - `max_score`: vai de 0 a 1 e indica o grau de relevância do resultado
