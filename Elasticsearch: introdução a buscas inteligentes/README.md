@@ -133,3 +133,53 @@ POST catalogo/_doc/1
     "país": "Brasil"
 }
 ```
+
+### Atividade 08 - Obtendo e Pesquisando Documentos
+
+#### Busca Geral
+
+```json
+GET [índice]/_search
+
+-- Nesse curso:
+GET catalogo/_count
+```
+
+```json
+GET [índice]/_search/?q=[termo]
+
+-- Nesse curso:
+GET catalogo/_search/?q=futebol
+```
+
+### Atividade 12 - Resumo
+
+- Nessa aula, aprendemos:
+  - O que é e para que serve o ElasticSearch.
+  - Como fazer uma instalação básica do ElasticSeach a ser usada em uma única máquina.
+  - Como instalar o Kibana e o cURL.
+  - Como utilizar um cliente REST para criar e localizar documentos por identificador, listar todos os documentos ou aplicar um valor simples para consulta.
+
+## Aula 02 - Índices, Tipos, Shards e Réplicas
+
+### Atividade 01 - Os Comandos HTTP HEAD e PUT
+
+| Banco Relacional | Elasticsearch |
+|:----------------:|:-------------:|
+|     Instância    |     Index     |
+|      Tabela      |      Type     |
+|      Esquema     |    Mapping    |
+|       Tupla      |    Document   |
+|      Coluna      |   Attribute   |
+
+- O HTTP HEAD
+  - Retorna apenas cabeçalhos HTTP
+  - Não retorna o documento
+  - Serve para saber se existe o documento
+
+#### Descobrindo se um documento existe
+
+- No SQL seria (provavelmente):
+  - `select 1 from pessoas where id = N`
+- No Elastic é:
+  - `HEAD catalogo/_doc/1`
