@@ -279,3 +279,10 @@ GET catalogo/_search/?q=futebol
     - IPv4
     - IPv6
     - informação geoespacial
+
+### Atividade 06 - Resumo
+
+- Nessa aula, aprendemos:
+  - Como verificar os mappings para nossos documentos.
+  - Tipos de dados existentes do ElasticSearch.
+  - Inferência de tipos pelo ElasticSearch.
