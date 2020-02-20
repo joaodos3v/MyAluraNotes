@@ -286,3 +286,45 @@ GET catalogo/_search/?q=futebol
   - Como verificar os mappings para nossos documentos.
   - Tipos de dados existentes do ElasticSearch.
   - Inferência de tipos pelo ElasticSearch.
+
+## Aula 05 - Quebrando Textos com Analyzers
+
+### Atividade 01 - Índice Invertido e Analisadores
+
+- Basicamente, todo o poder do Elasticsearch e suas funcionalidades são possíveis graças ao armazenamento de **índice invertido**.
+  - Essa técnica, basicamente, é semelhante aos glossários de um livro: as palavras (`tokens`) são referenciadas pelas páginas (`documentos`) em que se encontram.
+  - Dessa forma, o Elasticsearch consegue encontrar os termos buscados mesmo sem nenhum atributo ser especificado diretamente.
+- Para que essa busca ocorra, um *Analyzer* é necessário. Os mais comuns são:
+  - *Espaço em branco*
+  - *Padrão (standard)*
+  - *Simples*
+  - *Idioma (Portuguese, English, etc)*
+
+> Para testar o analyzer **espaço em branco**:
+
+```
+GET catalogo/_analyze
+{
+  "analyzer": "whitespace",
+  "text": "Eu nasci há 10 mil (sim, isso mesmo, 10 mil) anos atrás"
+}
+```
+
+> Para testar o analyzer **standard**:
+
+```
+GET catalogo/_analyze
+{
+  "text": "Eu nasci há 10 mil (sim, isso mesmo, 10 mil) anos atrás"
+}
+```
+
+> Para testar o analyzer **simples**:
+
+```
+GET catalogo/_analyze
+{
+  "analyzer": "simple",
+  "text": "Eu nasci há 10 mil (sim, isso mesmo, 10 mil) anos atrás"
+}
+```
