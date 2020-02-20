@@ -249,3 +249,8 @@ GET catalogo/_search/?q=futebol
   - Onde:
     - **SIZE:** tamanho da "página"
     - **FROM:** deslocamento (indica o intervalo)
+
+### Atividade 06 - Para saber Mais: API Scroll
+
+- Quando utilizamos paginação simples, temos que tomar cuidado para não causarmos instabilidade no cluster. Caso solicitemos 10.000 registros, todas as shards participantes na consulta podem retornar esta quantidade.
+  - Por exemplo, caso tenhamos 3 shards com 100.000 documentos em cada e pedimos os primeiros 10.000 resultados, o nó coordenador terá de processar 30.000 documentos, executar a ordenação e pegar os primeiros 10.000.
