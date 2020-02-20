@@ -213,3 +213,18 @@ GET catalogo/_search/?q=futebol
   - Como utilizar a API Rest para operações de criação, atualização, remoção e verificação de existência de documentos no ElasticSearch.
   - A analogia entre ElasticSearch e um banco de dados relacionais.
   - O que são shards, réplicas e qual a sua importância.
+
+## Aula 03 - Iniciando com Buscas
+
+### Atividade 01 - Busca Livre e Busca Específica
+
+> Busca Livre
+
+- O Elastic "cria" um campo `_all`. É por isso que, mesmo sem referenciar nenhum atributo, ele encontra todos os documentos que possuem o valor procurado.
+  - Ex.: o documento `{"nome": "João Vitor", "sobrenome": "Veronese Vieira"}` possui o camplo **_all** `"João Vitor Veronese Vieira"`
+
+> Busca Específica
+
+- Para fazer uma busca específica, a estrutura do comando `GET` muda um pouco:
+  - `GET <documento>/_search/?q=atributo:valor`
+  - Ex: `GET catalogo/_search/?q=estado:SP`
