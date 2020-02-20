@@ -240,3 +240,12 @@ GET catalogo/_search/?q=futebol
 - `hits`: é o resultado, propriamente dito
   - `total`: indica a quantia de resultados retornados
   - `max_score`: vai de 0 a 1 e indica o grau de relevância do resultado
+
+### Atividade 03 - Paginação
+
+- A paginação é muito útil para evitar qualquer tipo de gargalo ou sobrecarga de dados em qualquer um dos atores envolvidos no processo de busca: rede, Elastic, cliente, entre outros...
+- Para fazê-la em uma busca do Elastic, possivelmente uma estrutura semelhante à essa será utilizada:
+  - Ex.: `GET catalogo/_search/?q=futebol&size=10&from=0`
+  - Onde:
+    - **SIZE:** tamanho da "página"
+    - **FROM:** deslocamento (indica o intervalo)
