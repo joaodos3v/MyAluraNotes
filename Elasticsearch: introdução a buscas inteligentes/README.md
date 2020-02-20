@@ -333,3 +333,12 @@ GET catalogo/_analyze
 
 - Por padrão, o Elasticsearch é buscar no documento um termo **ou** (*OR*) outro. Para buscar documentos que contenham obrigatoriamente dois termos, é preciso utilizar o **e** (*AND*).
   - Atenção para a caixa alta, se for em caixa baixa, o Elasticsearch interpretará como mais um termo a ser buscado.
+
+### Atividade 08 - Resumo
+
+- Nessa aula, aprendemos:
+  - Como a busca exata e a busca de texto cheio são diferentes.
+  - O que são e como usar os analyzers para incrementar nossas buscas.
+  - A verificar como um analyzer vai indexar um determinado texto.
+  - Como alterar o analyzer padrão para português e melhorar nossas buscas.
+  
