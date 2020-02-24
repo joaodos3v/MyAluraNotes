@@ -30,7 +30,7 @@
 
 ## Aula 02 - Usando componentes
 
-### Atividade 8 - Resumo
+### Atividade 08 - Resumo
 
 - Nesta aula, aprendemos:
   - Criar um Class componente no React
@@ -39,7 +39,7 @@
 
 ## Aula 03 - Entendendo o state
 
-### Atividade 9 - Resumo
+### Atividade 09 - Resumo
 
 - Nesta aula, aprendemos:
   - Trabalhar com state
@@ -49,10 +49,16 @@
 
 ## Aula 04 - Lidando com formulários
 
-### Atividade 9 - Resumo
+### Atividade 09 - Resumo
 
 - Nesta aula, aprendemos:
   - Trabalhar com formulários
   - Utilizando o evento onChange
   - Submissão de formulário
   - Criar um elemento dinamicamente
+
+## Aula 05 - Estilizando a aplicação
+
+### Atividade 02 - Utilizando Materialize
+
+- `npm install materialize-css@1.0.0`
