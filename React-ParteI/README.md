@@ -62,3 +62,11 @@
 ### Atividade 02 - Utilizando Materialize
 
 - `npm install materialize-css@1.0.0`
+
+### Atividade 12 - Resumo
+
+- Nesta aula, aprendemos:
+  - Instalação do módulo do `materialize-css`.
+  - Importação de um arquivo de estilo.
+  - Utilizar o materialize.
+  - Estilizar o projeto utilizando className para atribuição de classes.
