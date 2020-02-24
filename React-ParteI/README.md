@@ -1,6 +1,6 @@
 # React parte 1: Componentes reutilizáveis para sua webapp
 
-## Aula 02: Preparando o ambiente
+## Aula 02 - Preparando o ambiente
 
 - `mkdir <pasta-do-curso>`
   - `cd <pasta-do-curso>`
@@ -18,3 +18,10 @@
   - `npx create-react-app react-alura`
 - Feito isso, entre no diretório criado pela ferramenta e então execute:
   - `npm start`
+
+## Aula 11 - Resumo
+
+- Nesta aula, aprendemos:
+  - Ambiente necessário para criação do projeto
+  - Criação de um projeto inicial utilizando create-react-app
+  - Inicialização do projeto inicial
